@@ -1,0 +1,16 @@
+/**
+* To Do: Add style editor widths based on the selected post/page layout.
+*/
+
+/* Structure */
+.wp-block {
+    max-width: 900px;
+}
+
+/** === Block Editor title === */
+.editor-post-title__block .editor-post-title__input,
+.editor-styles-wrapper h1.wp-block-post-title {
+    font-size: var(--hybridmag-font-size-xxxl);
+    margin-top: 0;
+    margin-bottom: 40px;
+}

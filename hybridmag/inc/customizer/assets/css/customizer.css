@@ -1,0 +1,75 @@
+.customize-control.th-has-switches .th-control-wrap:not(.active) {
+    display: none;
+}
+
+.th-responsive-switches {
+    list-style: none;
+    float: right;
+}
+
+ul.th-responsive-switches li {
+    float: left;
+    margin: 0;
+}
+
+.th-responsive-switches button {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 25px;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    margin-left: 3px;
+}
+
+.th-responsive-switches button i.dashicons {
+    font-size: 14px;
+    color: #ffffff;
+    width: auto;
+    height: auto;
+    line-height: 25px;
+}
+
+.th-responsive-switches button.active {
+    background: #008ec2;
+}
+
+.th-responsive-switches button:not(.active) {
+    background: #cccccc;
+}
+
+.customize-control-hybridmag-responsive-number {
+    margin: 15px 0;
+}
+
+#accordion-section-hybridmag_upsell a.button.button-secondary {
+    background: #00A388;
+    color: #fff;
+    border: none;
+    box-shadow: none;
+}
+
+.control-section-hm-upsell .accordion-section-title .button {
+    margin-top: -3px;
+}
+.control-section-hm-upsell.control-section .accordion-section-title {
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+    border-top: 2px solid #00A388;
+    border-bottom: 2px solid #00A388 !important;
+}
+
+.customize-control {
+    margin-bottom: 15px;
+}
+
+#customize-theme-controls .accordion-section-title button.accordion-trigger {
+    max-height: fit-content;
+}
+
+#customize-theme-controls #accordion-section-hybridmag_upsell .accordion-section-title:after {
+    display: none;
+}

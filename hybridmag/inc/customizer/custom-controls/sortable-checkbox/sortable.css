@@ -1,0 +1,84 @@
+.pill_checkbox_control .checkbox-label > input {
+	display: none;
+}
+
+.pill_checkbox_control .checkbox-label > .sortable-pill-title {
+	box-sizing: border-box;
+	cursor: pointer;
+	background-color: #ddd;
+	padding: 5px 15px;
+	border-radius: 20px;
+	font-size: 1rem;
+	display: inline-block;
+	margin-bottom: 5px
+}
+
+.pill_checkbox_control .sortable .checkbox-label > .sortable-pill-title {
+	cursor: move;
+}
+
+.pill_checkbox_control .sortable.fullwidth_pills .checkbox-label > .sortable-pill-title {
+	cursor: pointer;
+}
+
+.pill_checkbox_control .checkbox-label > input:checked + .sortable-pill-title { 
+	background-color: #2084bd;
+	color: #fff;
+}
+
+.pill_checkbox_control .checkbox-label > input:checked + .sortable-pill-title:before { 
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	font-family: dashicons;
+	font-weight: normal;
+	font-size: 24px;
+	content: "\f147";
+	margin-left: -10px;
+	vertical-align: bottom;
+}
+
+.pill_checkbox_control .fullwidth_pills .checkbox-label > .sortable-pill-title {
+	width: 100%;
+	border-radius: 0;
+}
+
+.pill_checkbox_control .sortable.fullwidth_pills .checkbox-label > .sortable-pill-title {
+	width: 90%;
+}
+
+.pill-ui-state-highlight {
+	display: inline-block;
+	padding: 5px 15px;
+	border-radius: 20px;
+	font-size: 1rem;
+	border: 1px dotted #2084bd;
+	margin-bottom: 5px;
+	height: 16px;
+}
+
+.pill_checkbox_control .sortable_pills .pill-ui-state-highlight {
+	width: 50px;
+	border-radius: 20px;
+}
+
+.pill_checkbox_control .sortable_pills.fullwidth_pills .pill-ui-state-highlight {
+	width: 90%;
+	border-radius: 0;
+}
+
+.pill_checkbox_control .dashicons-sort {
+	margin: 5px 0 0 1px;
+	color: #d4d4d4;
+	cursor: move;
+}
+
+.pill_checkbox_control .dashicons-sort:hover {
+	color: #a7a7a7;
+}
+
+.pill_checkbox_control .sortable_pills.fullwidth_pills .ui-sortable-helper {
+	width: calc(100% - 25px) !important;
+}
