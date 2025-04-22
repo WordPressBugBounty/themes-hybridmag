@@ -7,7 +7,7 @@
 
 if ( ! defined( 'HYBRIDMAG_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'HYBRIDMAG_VERSION', '1.0.2' );
+	define( 'HYBRIDMAG_VERSION', '1.0.5' );
 }
 
 /**
@@ -471,3 +471,8 @@ require get_template_directory() . '/inc/structure/header.php';
 require get_template_directory() . '/inc/structure/navigation.php';
 require get_template_directory() . '/inc/structure/featured.php';
 require get_template_directory() . '/inc/structure/footer.php';
+
+/**
+ * Demo data.
+ */
+require get_template_directory() . '/inc/dashboard/demo-data.php';

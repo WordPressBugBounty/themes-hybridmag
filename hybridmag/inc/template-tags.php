@@ -416,6 +416,37 @@ if ( ! function_exists( 'hybridmag_entry_meta' ) ) :
 
 endif;
 
+/**
+ * Sync BNM Blocks meta data separtor with the theme
+ */
+function hybridmag_sync_meta_separator( $default ) {
+	
+	$meta_separator = get_theme_mod( 'hybridmag_entry_meta_seperator', 'dot' );
+	switch ( $meta_separator ) {
+		case 'dash': 
+			$sep = '-';
+			break;
+		case 'vbar': 
+			$sep = '|';
+			break;
+		case 'mdash': 
+			$sep = '—';
+			break;
+		case 'dot': 
+			$sep = '•';
+			break;
+		case 'slash': 
+			$sep = '/';
+			break;
+		default: 
+			$sep = $default;
+			break;
+	}
+
+	return '<span class="hm-meta-sep">' . $sep . '</span>';
+}
+add_filter( 'bnm_blocks_meta_data_separator', 'hybridmag_sync_meta_separator' );
+
 if ( ! function_exists( 'hybridmag_entry_footer' ) ) :
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
@@ -657,17 +688,6 @@ add_action( 'hybridmag_after_entry_content', 'hybridmag_entry_footer_markup' );
  */
 function hybridmag_locate_entry_meta() {
 
-	$entry_meta_post_types = apply_filters(
-		'hybridmag_entry_meta_post_types',
-		array(
-			'post',
-		)
-	);
-
-	if ( ! in_array( get_post_type(), $entry_meta_post_types ) ) {
-		return;
-	}
-
 	if ( is_home() || is_archive() || is_search() ) { 
 
 		$location = get_theme_mod( 'hybridmag_entry_meta_location', 'footer' );
@@ -707,4 +727,150 @@ function hybridmag_get_viewall_link( $category_id ) {
 
 	}
 	return $viewall_link;
+}
+
+add_filter( 'bnm_blocks_meta_order', 'hybridmag_sync_bnm_blocks_meta_order', 10, 1 );
+function hybridmag_sync_bnm_blocks_meta_order( $plugin_meta_array ) {
+	// Get the meta order defined in the theme customizer
+	$theme_meta = get_theme_mod( 'hybridmag_archive_entry_meta', 'author,date,comments' );
+
+	$theme_meta_array = array_map( 'trim', explode( ',', $theme_meta ) );
+
+	// Filter the theme's meta array to include only items defined in the plugin's $plugin_meta_array
+	$final_meta_array = array_filter( $theme_meta_array, function( $item ) use ( $plugin_meta_array ) {
+		return in_array( $item, $plugin_meta_array, true );
+	});
+
+	return $final_meta_array;
+}
+
+/**
+* Determines whether the site has a dark mode logo.
+*
+* @param int $blog_id Optional. ID of the blog in question. Default is the ID of the current blog.
+* @return bool Whether the site has a custom logo or not.
+*/
+function hybridmag_has_dark_mode_logo( $blog_id = 0 ) {
+	$switched_blog = false;
+
+	if ( is_multisite() && ! empty( $blog_id ) && get_current_blog_id() !== (int) $blog_id ) {
+		switch_to_blog( $blog_id );
+		$switched_blog = true;
+	}
+
+	$custom_logo_id = get_theme_mod( 'hybridmag_dark_mode_logo' );
+	$is_image       = ( $custom_logo_id ) ? wp_attachment_is_image( $custom_logo_id ) : false;
+
+	if ( $switched_blog ) {
+		restore_current_blog();
+	}
+
+	return $is_image;
+}
+
+/**
+ * Returns a custom logo, linked to home unless the theme supports removing the link on the home page.
+ *
+ * @param int $blog_id Optional. ID of the blog in question. Default is the ID of the current blog.
+ * @return string Custom logo markup.
+ */
+function hybridmag_get_dark_mode_logo( $blog_id = 0 ) {
+	$html          = '';
+	$switched_blog = false;
+
+	if ( is_multisite() && ! empty( $blog_id ) && get_current_blog_id() !== (int) $blog_id ) {
+		switch_to_blog( $blog_id );
+		$switched_blog = true;
+	}
+
+	// We have a logo. Logo is go.
+	if ( hybridmag_has_dark_mode_logo() ) {
+		$custom_logo_id   = get_theme_mod( 'hybridmag_dark_mode_logo' );
+		$custom_logo_attr = array(
+			'class'   => 'custom-logo',
+			'loading' => false,
+		);
+
+		$unlink_homepage_logo = (bool) get_theme_support( 'custom-logo', 'unlink-homepage-logo' );
+
+		if ( $unlink_homepage_logo && is_front_page() && ! is_paged() ) {
+			/*
+			 * If on the home page, set the logo alt attribute to an empty string,
+			 * as the image is decorative and doesn't need its purpose to be described.
+			 */
+			$custom_logo_attr['alt'] = '';
+		} else {
+			/*
+			 * If the logo alt attribute is empty, get the site title and explicitly pass it
+			 * to the attributes used by wp_get_attachment_image().
+			 */
+			$image_alt = get_post_meta( $custom_logo_id, '_wp_attachment_image_alt', true );
+			if ( empty( $image_alt ) ) {
+				$custom_logo_attr['alt'] = get_bloginfo( 'name', 'display' );
+			}
+		}
+
+		/**
+		 * Filters the list of custom dark mode logo image attributes.
+		 *
+		 * @param array $custom_logo_attr Custom logo image attributes.
+		 * @param int   $custom_logo_id   Custom logo attachment ID.
+		 * @param int   $blog_id          ID of the blog to get the custom logo for.
+		 */
+		$custom_logo_attr = apply_filters( 'hybridmag_get_dark_mode_image_attributes', $custom_logo_attr, $custom_logo_id, $blog_id );
+
+		/*
+		 * If the alt attribute is not empty, there's no need to explicitly pass it
+		 * because wp_get_attachment_image() already adds the alt attribute.
+		 */
+		$image = wp_get_attachment_image( $custom_logo_id, 'full', false, $custom_logo_attr );
+
+		// Check that we have a proper HTML img element.
+		if ( $image ) {
+
+			if ( $unlink_homepage_logo && is_front_page() && ! is_paged() ) {
+				// If on the home page, don't link the logo to home.
+				$html = sprintf(
+					'<span class="custom-logo-link">%1$s</span>',
+					$image
+				);
+			} else {
+				$aria_current = ! is_paged() && ( is_front_page() || is_home() && ( (int) get_option( 'page_for_posts' ) !== get_queried_object_id() ) ) ? ' aria-current="page"' : '';
+
+				$html = sprintf(
+					'<a href="%1$s" class="custom-logo-link" rel="home"%2$s>%3$s</a>',
+					esc_url( home_url( '/' ) ),
+					$aria_current,
+					$image
+				);
+			}
+		}
+	} elseif ( is_customize_preview() ) {
+		// If no logo is set but we're in the Customizer, leave a placeholder (needed for the live preview).
+		$html = sprintf(
+			'<a href="%1$s" class="custom-logo-link" style="display:none;"><img class="custom-logo" alt="" /></a>',
+			esc_url( home_url( '/' ) )
+		);
+	}
+
+	if ( $switched_blog ) {
+		restore_current_blog();
+	}
+
+	/**
+	 * Filters the custom logo output.
+	 *
+	 * @param string $html    Custom logo HTML output.
+	 * @param int    $blog_id ID of the blog to get the custom logo for.
+	 */
+	return apply_filters( 'hybridmag_get_custom_dark_mode_logo', $html, $blog_id );
+}
+
+/**
+ * Displays a custom logo for dark mode
+ *
+ * @param int $blog_id Optional. ID of the blog in question. Default is the ID of the current blog.
+ */
+function hybridmag_the_dark_mode_logo() {
+	echo hybridmag_get_dark_mode_logo();
 }

@@ -11,18 +11,13 @@ do_action( 'hybridmag_before_featured_content' );
 $hybridmag_slider_source = get_theme_mod( 'hybridmag_slider_posts_source', 'latest' );
 $hybridmag_ignore_sticky_posts_slider = get_theme_mod( 'hybridmag_ignore_sticky_posts_slider', false );
 $hybridmag_slider_args = array(
-    'posts_per_page'        => 5,
+    'posts_per_page'        => get_theme_mod( 'hybridmag_slider_number_posts', 5 ),
+    'ignore_sticky_posts'   => $hybridmag_ignore_sticky_posts_slider
 );
 if ( 'category' === $hybridmag_slider_source ) {
     $hybridmag_slider_args['cat'] = get_theme_mod( 'hybridmag_slider_posts_category', '' );
-    if ( false === $hybridmag_ignore_sticky_posts_slider ) {
-        $hybridmag_slider_args['ignore_sticky_posts'] = true;
-    }
 } elseif ( 'tag' === $hybridmag_slider_source ) {
     $hybridmag_slider_args['tag'] = get_theme_mod( 'hybridmag_slider_posts_tag', '' );
-    if ( true === $hybridmag_ignore_sticky_posts_slider ) {
-        $hybridmag_slider_args['ignore_sticky_posts'] = true;
-    }
 } elseif ( 'sticky' === $hybridmag_slider_source ) {
     $hybridmag_slider_args[ 'post__in' ] = get_option( 'sticky_posts' );
     $hybridmag_slider_args[ 'ignore_sticky_posts' ] = 1;
@@ -36,22 +31,17 @@ $hybridmag_slider_posts = new WP_Query( $hybridmag_slider_args );
 $hybridmag_fps_source = get_theme_mod( 'hybridmag_featured_posts_source', 'latest' );
 $hybridmag_fps_args = array(
     'posts_per_page'        => 2,
+    'ignore_sticky_posts'   => 1
 );
 
 if ( 'category' === $hybridmag_fps_source ) {
     $hybridmag_fps_args['cat'] = get_theme_mod( 'hybridmag_featured_posts_category', '' );
-    $hybridmag_fps_args[ 'ignore_sticky_posts' ] = true;
 } elseif ( 'tag' === $hybridmag_fps_source ) {
     $hybridmag_fps_args['tag'] = get_theme_mod( 'hybridmag_featured_posts_tag', '' );
-    $hybridmag_fps_args[ 'ignore_sticky_posts' ] = true;
 } elseif ( 'sticky' === $hybridmag_fps_source ) {
     $hybridmag_fps_args = array(
-        'posts_per_page'        => 2,
-        'post__in'              => get_option( 'sticky_posts' ),
-        'ignore_sticky_posts'   => 1,
+        'post__in'              => get_option( 'sticky_posts' )
     );
-} else {
-    $hybridmag_fps_args[ 'ignore_sticky_posts' ] = true;
 }
 
 $hybridmag_highlighted_posts = new WP_Query( $hybridmag_fps_args );

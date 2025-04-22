@@ -299,10 +299,15 @@ if ( ! function_exists( 'hybridmag_site_title' ) ) :
 		?>
 		<div class="site-branding-container">
 			<?php if ( has_custom_logo() ) : ?>
-				<div class="site-logo">
+				<div class="site-logo hm-light-mode-logo">
 					<?php the_custom_logo(); ?>
 				</div>
 			<?php endif; ?>
+            <?php if ( hybridmag_has_dark_mode_logo() ) : ?>
+                <div class="site-logo hm-dark-mode-logo">
+                    <?php hybridmag_the_dark_mode_logo(); ?>
+                </div>
+            <?php endif; ?>
 
 			<div class="site-branding">
 				<?php

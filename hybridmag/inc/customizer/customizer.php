@@ -145,6 +145,30 @@ function hybridmag_customize_register( $wp_customize ) {
 		)
 	);
 
+	// Dark Mode Logo
+	$wp_customize->add_setting( 
+		'hybridmag_dark_mode_logo', 
+		array(
+			'default'           => '',
+			'sanitize_callback' => 'absint',
+		) 
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Cropped_Image_Control(
+			$wp_customize,
+			'hybridmag_dark_mode_logo',
+			array(
+				'label'			=> esc_html__( 'Dark Mode Logo', 'hybridmag' ),
+				'section'		=> 'title_tagline',
+				'height'		=> 50,
+				'width'			=> 165, 
+				'flex_width'	=> true, 
+				'flex_height'	=> true, 
+				'priority'		=> 9,
+			)
+		)
+	);
+
 	// Logo Max Width
 	$wp_customize->add_setting(
 		'hybridmag_logo_max_width_desktop',
@@ -288,7 +312,7 @@ function hybridmag_customize_register( $wp_customize ) {
 			'label' => esc_html__( 'Content Layout', 'hybridmag' ),
 			'section' => 'hybridmag_site_layout_section',
 			'choices' => array(
-				'separate-containers'	=> esc_html__( 'separate Containers', 'hybridmag' ),
+				'separate-containers'	=> esc_html__( 'Separate Containers', 'hybridmag' ),
 				'one-container'			=> esc_html__( 'One Container', 'hybridmag' )
 			)
 		)
@@ -2023,7 +2047,8 @@ function hybridmag_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new HybridMag_Toggle_Switch_Control( $wp_customize, 'hybridmag_show_featured_content',
 		array(
 			'label' 	=> esc_html__( 'Display slider + 2 posts.', 'hybridmag' ),
-			'section' 	=> 'hybridmag_featured_slider'
+			'section' 	=> 'hybridmag_featured_slider',
+			'priority'	=> 3,
 		)
 	) );
 
@@ -2047,6 +2072,7 @@ function hybridmag_customize_register( $wp_customize ) {
 					'front'		=> esc_html__( 'Front Page', 'hybridmag' ),
 					'blog'		=> esc_html__( 'Blog Posts Page', 'hybridmag' )
 				),
+				'priority'	=> 6,
 				'active_callback' => 'hybridmag_is_featured_content_active'
 			)
 		)
@@ -2072,6 +2098,7 @@ function hybridmag_customize_register( $wp_customize ) {
 				'tag' 		=> esc_html__( 'By Tag', 'hybridmag' ),
 				'sticky'	=> esc_html__( 'Sticky Posts', 'hybridmag' ),
 			),
+			'priority'	=> 9,
 			'active_callback' => 'hybridmag_is_featured_content_active'
 		)
 	);
@@ -2092,6 +2119,7 @@ function hybridmag_customize_register( $wp_customize ) {
 			array(
 			    'label'   			=> esc_html__( 'Select the category for slider posts.', 'hybridmag' ),
 			    'section' 			=> 'hybridmag_featured_slider',
+				'priority'			=> 12,
 				'active_callback'	=> 'hybridmag_is_slider_source_category'
 			) 
 		) 
@@ -2113,6 +2141,7 @@ function hybridmag_customize_register( $wp_customize ) {
 			'section'			=> 'hybridmag_featured_slider',
 			'type'				=> 'text',
 			'label'				=> esc_html__( 'Enter the tag slug', 'hybridmag' ),
+			'priority'			=> 15,
 			'active_callback'	=> 'hybridmag_is_slider_source_tag'
 		)
 	);
@@ -2121,7 +2150,7 @@ function hybridmag_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'hybridmag_ignore_sticky_posts_slider',
 		array(
-			'default'           => true,
+			'default'           => false,
 			'sanitize_callback' => 'hybridmag_sanitize_checkbox',
 		)
 	);
@@ -2131,6 +2160,7 @@ function hybridmag_customize_register( $wp_customize ) {
 			'type'        		=> 'checkbox',
 			'label'       		=> esc_html__( 'Ignore Sticky Posts', 'hybridmag' ),
 			'section'     		=> 'hybridmag_featured_slider',
+			'priority'			=> 18,
 			'active_callback'	=> 'hybridmag_is_not_sticky_posts_slider'
 		)
 	);
@@ -2148,6 +2178,7 @@ function hybridmag_customize_register( $wp_customize ) {
 		array(
 			'label' 	=> esc_html__( 'Slider autoplay', 'hybridmag' ),
 			'section' 	=> 'hybridmag_featured_slider',
+			'priority'	=> 21,
 			'active_callback' => 'hybridmag_is_featured_content_active'
 		)
 	) );
@@ -2170,6 +2201,7 @@ function hybridmag_customize_register( $wp_customize ) {
 				'max'   => 30,
 				'step'  => 1,
 			),
+			'priority'	=> 24,
 			'active_callback' => 'hybridmag_is_slider_autoplay_active'
 		)
 	) );
@@ -2194,6 +2226,7 @@ function hybridmag_customize_register( $wp_customize ) {
 				'tag' 		=> esc_html__( 'By Tag', 'hybridmag' ),
 				'sticky'	=> esc_html__( 'Sticky Posts', 'hybridmag' ),
 			),
+			'priority'	=> 27,
 			'active_callback' => 'hybridmag_is_featured_content_active'
 		)
 	);
@@ -2214,6 +2247,7 @@ function hybridmag_customize_register( $wp_customize ) {
 			array(
 			    'label'   			=> esc_html__( 'Select the category for featured posts.', 'hybridmag' ),
 			    'section' 			=> 'hybridmag_featured_slider',
+				'priority'			=> 30,
 				'active_callback'	=> 'hybridmag_is_fps_source_category'
 			) 
 		) 
@@ -2235,6 +2269,7 @@ function hybridmag_customize_register( $wp_customize ) {
 			'section'			=> 'hybridmag_featured_slider',
 			'type'				=> 'text',
 			'label'				=> esc_html__( 'Enter the tag slug', 'hybridmag' ),
+			'priority'			=> 33,
 			'active_callback'	=> 'hybridmag_is_fps_source_tag'
 		)
 	);
@@ -2253,6 +2288,7 @@ function hybridmag_customize_register( $wp_customize ) {
 			'type'        => 'checkbox',
 			'label'       => esc_html__( 'Hide placeholder image.', 'hybridmag' ),
 			'section'     => 'hybridmag_featured_slider',
+			'priority'	  => 36,
 			'active_callback' => 'hybridmag_is_featured_content_active'
 		)
 	);

@@ -57,7 +57,7 @@ if ( ! function_exists( 'hybridmag_navigation_block' ) ) :
 
         $hybridmag_menu_inner_width = get_theme_mod( 'hybridmag_menu_inner_width', 'contained' );
         $hybridmag_menu_inner_class = '';
-        if ( 'contained' == $hybridmag_menu_inner_width ) {
+        if ( 'full' == $hybridmag_menu_width && 'contained' == $hybridmag_menu_inner_width ) {
             $hybridmag_menu_inner_class = 'hm-container';
         }
 

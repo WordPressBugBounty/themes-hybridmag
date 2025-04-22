@@ -226,8 +226,9 @@
   /* Links
   --------------------------------------------- */
   a {
-    color: var(--hybridmag-color-link);
-    text-decoration: none;
+    /*color: var(--hybridmag-color-link);*/
+    color: #046bd2;
+    text-decoration: underline;
   }
   
   a:hover, a:focus, a:active {
