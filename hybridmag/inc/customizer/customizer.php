@@ -30,6 +30,7 @@ function hybridmag_customize_register( $wp_customize ) {
 	$wp_customize->get_control( 'background_color' )->priority  = 2;
 	$wp_customize->get_control( 'background_color' )->section 	= 'hybridmag_base_colors'; 
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+	$wp_customize->get_setting( 'custom_logo' )->transport = 'refresh';
 	// Hide the checkbox "Display site title and tagline"
 	$wp_customize->remove_control( 'display_header_text' );
 
@@ -3726,7 +3727,7 @@ function hybridmag_is_time_ago( $control ) {
  * Check if the custom logo has been set.
  */
 function hybridmag_has_custom_logo() {
-	if ( has_custom_logo() ) {
+	if ( has_custom_logo() || hybridmag_has_dark_mode_logo() ) {
 		return true;
 	} else {
 		return false;

@@ -143,6 +143,10 @@ function hybridmag_body_classes( $classes ) {
 		$classes[] = 'hm-wide-footer';
 	}
 
+	if ( hybridmag_has_dark_mode_logo() ) {
+		$classes[] = 'hm-has-dm-logo';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'hybridmag_body_classes' );

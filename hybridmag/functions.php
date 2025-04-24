@@ -6,8 +6,7 @@
  */
 
 if ( ! defined( 'HYBRIDMAG_VERSION' ) ) {
-	// Replace the version number of the theme on each release.
-	define( 'HYBRIDMAG_VERSION', '1.0.5' );
+	define( 'HYBRIDMAG_VERSION', '1.0.6' );
 }
 
 /**

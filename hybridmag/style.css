@@ -5,7 +5,7 @@ Theme URI: https://themezhut.com/themes/hybridmag/
 Author: ThemezHut
 Author URI: https://themezhut.com
 Description: HybridMag is a modern and stylish WordPress theme for blogs, newspapers, and magazine websites. The advanced options provided with HybridMag allow you to tailor every aspect of your website to match your brand, making it the best choice for online publishers.
-Version: 1.0.5
+Version: 1.0.6
 Tested up to: 6.8
 Requires PHP: 7.0
 License: GNU General Public License v2 or later
@@ -1649,10 +1649,10 @@ html.hm-dark body.hybridmag-boxed #page {
 html.hm-dark body.hybridmag-boxed.hm-cl-one #page {
   background-color: #222222;
 }
-html.hm-dark .hm-light-mode-logo {
+html.hm-dark .hm-has-dm-logo .hm-light-mode-logo {
   display: none;
 }
-html.hm-dark .hm-dark-mode-logo {
+html.hm-dark .hm-has-dm-logo .hm-dark-mode-logo {
   display: block;
 }
 html.hm-dark .hm-top-bar a {
