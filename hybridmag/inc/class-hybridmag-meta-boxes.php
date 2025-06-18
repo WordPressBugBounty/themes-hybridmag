@@ -106,6 +106,9 @@ class HybridMag_Metaboxes {
         $hide_page_title = isset( $_POST['hybridmag_hide_page_title'] ) ? "true" : "false";
         update_post_meta( $post_id, '_hybridmag_hide_page_title', $hide_page_title );
         
+        $force_gutenberg = isset( $_POST['hybridmag_force_gutenberg'] ) ? 'true' : 'false';
+        update_post_meta( $post_id, '_hybridmag_force_gutenberg', $force_gutenberg );
+
     }
  
  
@@ -127,6 +130,9 @@ class HybridMag_Metaboxes {
 
         $hide_featured_image = get_post_meta( $post->ID, '_hybridmag_hide_featured_image', true );
         $hide_page_title = get_post_meta( $post->ID, '_hybridmag_hide_page_title', true );
+        
+        $is_gutenberg_default = use_block_editor_for_post( $post );
+        $force_gutenberg = get_post_meta( $post->ID, '_hybridmag_force_gutenberg', true );
         ?>
 
         <label class="hm-metabox-select-label" for="hybridmag_layout">
@@ -157,5 +163,17 @@ class HybridMag_Metaboxes {
         <?php endif; ?>
         
         <?php
+
+        // Only show the Gutenberg option if Classic Editor is default or forced guteberg using this option.
+        if ( ! $is_gutenberg_default || $force_gutenberg === 'true' ) : 
+            ?>
+            <p>
+                <label for="hybridmag_force_gutenberg" class="hm-metabox-label">
+                    <input type="checkbox" name="hybridmag_force_gutenberg" id="hybridmag_force_gutenberg" class="hm-metabox-field" value="true" <?php checked( $force_gutenberg, 'true' ); ?>>
+                    <?php esc_html_e( 'Use Block editor (Gutenberg) for this post/page', 'hybridmag' ); ?>
+                </label>
+            </p>
+            <?php
+        endif;
     }
 }

@@ -241,6 +241,47 @@ function hybridmag_block_editor_custom_css() {
 
     }
 
+    // Editor Background Color Select - Currently only for the magazine template.
+    $site_layout = get_theme_mod( 'hybridmag_site_layout', 'wide' );
+    $content_layout = get_theme_mod( 'hybridmag_content_layout', 'separate-containers' );
+    $custom_bg_color = get_background_color();
+
+    if ( 'wide' === $site_layout ) {
+        if ( ! empty( $custom_bg_color ) ) {
+            if ( 'separate-containers' === $content_layout ) {
+                $css .= '
+                    body.hybridmag-wide.page-template-template-magazine.hm-cl-sep .editor-styles-wrapper {
+                        background: #'. esc_attr( $custom_bg_color ) .' !important;
+                    }
+                ';
+            } elseif ( 'one-container' === $content_layout ) {
+                $css .= '
+                    body.hybridmag-wide.page-template-template-magazine.hm-cl-one .editor-styles-wrapper {
+                        background: #'. esc_attr( $custom_bg_color ) .' !important;
+                    }
+                ';
+            }
+        }
+    }
+
+    if ( 'boxed' === $site_layout ) {
+        if ( ! empty( $inner_background_color ) ) {
+            if ( 'separate-containers' === $content_layout ) {
+                $css .= '
+                    body.hybridmag-boxed.page-template-template-magazine.hm-cl-sep .editor-styles-wrapper {
+                        background: '. esc_attr( $inner_background_color ) .' !important;
+                    }
+                ';
+            } elseif ( 'one-container' === $content_layout ) {
+                $css .= '
+                    body.hybridmag-boxed.page-template-template-magazine.hm-cl-one .editor-styles-wrapper {
+                        background: '. esc_attr( $inner_background_color ) .' !important;
+                    }
+                ';
+            }
+        }
+    }
+
     return $css;
 
 }

@@ -367,39 +367,47 @@ hybridmag.mobileMenuToggle = {
  */
 hybridmag.darkModeToggle = {
 
-    init: function() {
-        // Check if a dark mode preference is already saved
-        if ( localStorage.getItem('hybridmagDarkMode') === 'enabled' ) {
-            document.documentElement.classList.add('hm-dark');
+        init: function() {
+        // Get the html element
+        var html = document.documentElement;
+        
+        // Check for saved user preference first
+        if (localStorage.getItem('hybridmagDarkMode') === 'enabled') {
+            html.classList.add('hm-dark');
+        } 
+        // Check for admin default if no user preference
+        else if (localStorage.getItem('hybridmagDarkMode') === null) {
+            if (hybridmagAdminSettings.darkModeDefault) {
+                html.classList.add('hm-dark');
+            }
         }
 
-        // Do the toggle.
+        // Initialize the toggle functionality
         this.toggle();
     },
 
-    performToggle: function( element ) {
-
+    performToggle: function(element) {
         var html = document.documentElement;
 
-        if ( html.classList.contains('hm-dark') ) {
+        if (html.classList.contains('hm-dark')) {
             html.classList.remove('hm-dark');
             localStorage.setItem('hybridmagDarkMode', 'disabled');
         } else {
             html.classList.add('hm-dark');
             localStorage.setItem('hybridmagDarkMode', 'enabled');
         }
-
+        
     },
 
     toggle: function() {
         var self = this;
 
-        document.querySelectorAll('.hm-light-dark-toggle').forEach( function( element ) {
-            element.addEventListener( 'click', function( event ) {
+        document.querySelectorAll('.hm-light-dark-toggle').forEach(function(element) {
+            element.addEventListener('click', function(event) {
                 event.preventDefault();
-                self.performToggle( element );
-            } );
-        } );
+                self.performToggle(element);
+            });
+        });
     }
 }
 

@@ -105,3 +105,45 @@ function hybridmag_inline_block_editor_styles() {
 
     return $custom_css;
 }
+
+/**
+ * Adds custom classes to the body on Gutenberg Editor
+ * 
+ * @since 1.0.7
+ */
+function hybridmag_gutenberg_body_class( $classes ) {
+
+    $screen = get_current_screen();
+
+	if ( $screen && $screen->is_block_editor ) {
+
+		$site_layout = get_theme_mod( 'hybridmag_site_layout', 'wide' );
+		if ( 'boxed' === $site_layout ) {
+			$classes .= ' hybridmag-boxed';
+		} elseif ( 'wide' === $site_layout ) {
+			$classes .= ' hybridmag-wide';
+		}
+
+		$content_layout = get_theme_mod( 'hybridmag_content_layout', 'separate-containers' );
+		if ( 'separate-containers' === $content_layout ) {
+			$classes .= ' hm-cl-sep';
+		} else {
+			$classes .= ' hm-cl-one';
+		}
+
+		if ( $screen->post_type === 'page' ) {
+			$post_id = isset( $_GET['post'] ) ? intval( $_GET['post'] ) : 0;
+			if ( $post_id ) {
+				$template_slug = get_page_template_slug( $post_id );
+				// Check if this page uses the 'template-magazine.php' template
+				if ( $template_slug === 'page-templates/template-magazine.php' ) {
+					$classes .= ' page-template-template-magazine';
+				}
+			}
+		}
+
+	}
+
+    return $classes;
+}
+add_filter( 'admin_body_class', 'hybridmag_gutenberg_body_class' );

@@ -128,4 +128,27 @@
         });
     });
 
+	wp.customize( 'hybridmag_is_dark_mode_default', function( value ) {
+		value.bind( function( to ) {
+
+			var html = document.documentElement || document.getElementsByTagName('html')[0];
+
+			if ( to ) {
+				if ( ! html.classList.contains('hm-dark') ) {
+					html.classList.add('hm-dark');
+				}
+				if ( localStorage.getItem('hybridmagDarkMode') !== 'enabled' ) {
+					localStorage.setItem('hybridmagDarkMode', 'enabled');
+				}
+			} else {
+				if ( html.classList.contains('hm-dark') ) {
+					html.classList.remove('hm-dark');
+				}
+				if ( localStorage.getItem('hybridmagDarkMode') !== 'disabled' ) {
+					localStorage.setItem('hybridmagDarkMode', 'disabled');
+				}
+			}
+		} );
+	} ); 
+
 }( jQuery ) );

@@ -5,7 +5,7 @@ Theme URI: https://themezhut.com/themes/hybridmag/
 Author: ThemezHut
 Author URI: https://themezhut.com
 Description: HybridMag is a modern and stylish WordPress theme for blogs, newspapers, and magazine websites. The advanced options provided with HybridMag allow you to tailor every aspect of your website to match your brand, making it the best choice for online publishers.
-Version: 1.0.6
+Version: 1.0.7
 Tested up to: 6.8
 Requires PHP: 7.0
 License: GNU General Public License v2 or later
@@ -1470,10 +1470,6 @@ textarea {
   font-weight: 500;
 }
 
-.hm-header-bar {
-  z-index: -1;
-  position: relative;
-}
 .hm-header-bar .hm-breadcrumb-wrap {
   padding: 10px 15px;
   margin-bottom: 0;
@@ -1509,6 +1505,10 @@ textarea {
   }
 }
 
+.site-header {
+  position: relative;
+  z-index: 100;
+}
 .site-header .hm-light-icon {
   display: none;
 }
@@ -3932,20 +3932,27 @@ li.hm-tab.th-ui-state-active a {
   --bnm-category-bg-hover-color: #333333;
 }
 
-.hm-cl-sep .wpbnmpb1,
-.hm-cl-sep .wpbnmpb2,
-.hm-cl-sep .wpbnmspp {
+.hm-cl-sep .hm-magazine-1-sb .wpbnmpb1,
+.hm-cl-sep .hm-magazine-1-sb .wpbnmpb2,
+.hm-cl-sep .hm-magazine-1-sb .wpbnmspp,
+.hm-cl-sep .hm-magazine-2-sb .wpbnmpb1,
+.hm-cl-sep .hm-magazine-2-sb .wpbnmpb2,
+.hm-cl-sep .hm-magazine-2-sb .wpbnmspp {
   padding: var(--hybridmag-global-inner-spacing);
   border-radius: var(--hybridmag-global-border-radius);
   box-shadow: var(--hybridmag-global-box-shadow);
   background: var(--hybridmag-color-bg-cl-sep-content);
 }
-.hm-cl-sep .wpbnmspp.image-alignbehind {
+.hm-cl-sep .hm-magazine-1-sb .wpbnmspp.image-alignbehind,
+.hm-cl-sep .hm-magazine-2-sb .wpbnmspp.image-alignbehind {
   padding: 0;
 }
-.hm-cl-sep .wpbnmfpb1,
-.hm-cl-sep .wpbnmfpb2,
-.hm-cl-sep .wpbnmposw {
+.hm-cl-sep .hm-magazine-1-sb .wpbnmfpb1,
+.hm-cl-sep .hm-magazine-1-sb .wpbnmfpb2,
+.hm-cl-sep .hm-magazine-1-sb .wpbnmposw,
+.hm-cl-sep .hm-magazine-2-sb .wpbnmfpb1,
+.hm-cl-sep .hm-magazine-2-sb .wpbnmfpb2,
+.hm-cl-sep .hm-magazine-2-sb .wpbnmposw {
   box-shadow: var(--hybridmag-global-box-shadow);
 }
 
@@ -3956,8 +3963,8 @@ li.hm-tab.th-ui-state-active a {
   border-radius: var(--hybridmag-global-border-radius);
 }
 
-.wpbnmpb1 .post-thumbnail,
-.wpbnmpb2 .post-thumbnail {
+.wpbnmpb1 .post-thumbnail img,
+.wpbnmpb2 .post-thumbnail img {
   border-radius: var(--hybridmag-global-border-radius);
 }
 
@@ -4023,6 +4030,14 @@ li.hm-tab.th-ui-state-active a {
 }
 .bnm-box-cat .bnm-cat-links a:visited {
   color: #ffffff;
+}
+
+/* Custom Block Styles */
+.bnmbcs.is-style-boxed {
+  padding: var(--hybridmag-global-inner-spacing);
+  background: var(--hybridmag-color-bg-cl-sep-content);
+  border-radius: var(--hybridmag-global-border-radius);
+  box-shadow: var(--hybridmag-global-box-shadow);
 }
 
 /*--------------------------------------------------------------

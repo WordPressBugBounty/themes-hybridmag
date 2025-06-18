@@ -47,6 +47,30 @@
   --hybridmag-footer-cols-gap: 40px;
 }
 
+:root {
+    --hybridmag-global-spacing: 35px;
+    --hybridmag-sidebar-spacing: 35px;
+    --hybridmag-post-cols-gap: 35px;
+    --hybridmag-post-row-gap: 35px;
+    --hybridmag-global-inner-spacing: 20px;
+    --hybridmag-footer-cols-gap: 40px;
+    --hybridmag-global-box-shadow: 0 0 15px 0 rgba( 0, 0, 0, 0.06);
+    --hybridmag-global-border-radius: 6px;
+
+    --hybridmag-sticky-element-height: 80px;
+
+    @media (min-width: 480px) {
+        --hybridmag-global-inner-spacing: 30px;
+    }
+}
+
+.hm-cl-one {
+    --hybridmag-global-spacing: 50px;
+    --hybridmag-sidebar-spacing: 50px;
+    --hybridmag-post-cols-gap: 50px;
+    --hybridmag-post-row-gap: 50px;
+}
+
   html {
     font-size: var(--hybridmag-font-size-base);
   }
@@ -151,7 +175,17 @@
   body {
     background-color: #ffffff;
   }
-  
+
+  body.hybridmag-boxed.page-template-template-magazine.hm-cl-sep .editor-styles-wrapper,
+  body.hybridmag-wide.page-template-template-magazine.hm-cl-sep .editor-styles-wrapper {
+    background: #f5f5f5;
+  }
+
+  body.hybridmag-boxed.page-template-template-magazine.hm-cl-one .editor-styles-wrapper,
+  body.hybridmag-wide.page-template-template-magazine.hm-cl-one .editor-styles-wrapper {
+    background: #ffffff;
+  }
+
   hr {
     background-color: #ccc;
     border: 0;
@@ -410,4 +444,32 @@
 	border-bottom: 2px solid var(--hybridmag-color-primary);
 	display: inline-block;
 	line-height: 1.2;
+}
+
+/* Custom Block Styles */
+.bnmbcs.is-style-boxed { 
+  padding: var(--hybridmag-global-inner-spacing); 
+  background: var(--hybridmag-color-bg-cl-sep-content);
+  border-radius: var(--hybridmag-global-border-radius);
+  box-shadow: var(--hybridmag-global-box-shadow);
+}
+
+.wpbnmspp.image-alignbehind .post-thumbnail img, 
+.wpbnmspp .post-thumbnail img {
+  border-radius: var(--hybridmag-global-border-radius);
+}
+
+.wpbnmspp.image-alignbehind .post-has-image .bnm-entry-wrapper {
+  border-bottom-left-radius: var(--hybridmag-global-border-radius);
+  border-bottom-right-radius: var(--hybridmag-global-border-radius);
+}
+
+.bnm-fp1-container, .bnm-fp2-container, .thbnm-swiper {
+  overflow: hidden;
+  border-radius: var(--hybridmag-global-border-radius);
+}
+
+.wpbnmpb1 .post-thumbnail img, 
+.wpbnmpb2 .post-thumbnail img {
+    border-radius: var(--hybridmag-global-border-radius);
 }

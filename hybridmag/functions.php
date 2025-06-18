@@ -6,7 +6,7 @@
  */
 
 if ( ! defined( 'HYBRIDMAG_VERSION' ) ) {
-	define( 'HYBRIDMAG_VERSION', '1.0.6' );
+	define( 'HYBRIDMAG_VERSION', '1.0.7' );
 }
 
 /**
@@ -295,6 +295,11 @@ function hybridmag_scripts() {
 	wp_style_add_data( 'hybridmag-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'hybridmag-main', get_template_directory_uri() . '/assets/js/main.js', array(), HYBRIDMAG_VERSION, true );
+    wp_localize_script( 'hybridmag-main', 'hybridmagAdminSettings',
+        array(
+            'darkModeDefault' => (bool) get_theme_mod( 'hybridmag_is_dark_mode_default', false )
+        )
+    );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -321,6 +326,11 @@ function hybridmag_scripts() {
 	
 }
 add_action( 'wp_enqueue_scripts', 'hybridmag_scripts' );
+
+/**
+ * Block Styles.
+ */
+require get_template_directory() . '/inc/block-styles.php';
 
 /**
  * Handle SVG icons.

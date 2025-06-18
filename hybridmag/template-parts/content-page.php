@@ -42,11 +42,6 @@
 	<?php 
 		// After page header hook.
 		do_action( 'hybridmag_after_page_header' );
-
-		if ( get_theme_mod( 'hybridmag_show_page_thumbnail', true ) ) {
-			hybridmag_post_thumbnail(); 
-		}
-		
 	?>
 
 	<div class="entry-content">

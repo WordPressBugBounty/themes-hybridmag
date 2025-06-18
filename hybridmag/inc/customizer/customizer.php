@@ -486,6 +486,25 @@ function hybridmag_customize_register( $wp_customize ) {
 		)
 	) );
 
+	// Enable Disable Dark mode by default
+	$wp_customize->add_setting(
+		'hybridmag_is_dark_mode_default',
+		array(
+			'default'           => false,
+			'sanitize_callback' => 'hybridmag_sanitize_checkbox',
+			'transport'         => 'postMessage'
+		)
+	);
+	$wp_customize->add_control(
+		'hybridmag_is_dark_mode_default',
+		array(
+			'type'        => 'checkbox',
+			'label'       => esc_html__( 'Set dark mode as default', 'hybridmag' ),
+			'description' => esc_html__( 'If enabled, the site will load in dark mode by default.', 'hybridmag' ),
+			'section'     => 'hybridmag_site_styling_section',
+		)
+	);
+
 	// Header Settings Panel
 	$wp_customize->add_panel(
 		'hybridmag_panel_header',

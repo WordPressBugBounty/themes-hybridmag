@@ -723,3 +723,28 @@ function hybridmag_is_section_displayed( $displayed_on = array() ) {
 
 	return $displayed;
 }
+
+/**
+ * If the user has disabled Gutenberg, override that behaviour for specific posts/pages based on post meta control.
+ * 
+ * @since 1.0.7
+ */
+function hybridmag_conditionally_enable_gutenberg( $use_block_editor, $post ) {
+
+	// Return the default behaviour if queried post type is not a 'post' or a 'page'.
+	$post_type = $post->post_type;
+	if ( 'post' !== $post_type && 'page' !== $post_type  ) {
+		return $use_block_editor;
+	}
+
+    // If Gutenberg is already the default, do nothing
+    if ( $use_block_editor ) {
+        return true;
+    }
+
+    // If Classic is default, check for override
+    $force_gutenberg = get_post_meta( $post->ID, '_hybridmag_force_gutenberg', true );
+    return $force_gutenberg === 'true';
+
+}
+add_filter( 'use_block_editor_for_post', 'hybridmag_conditionally_enable_gutenberg', 999, 2 );
