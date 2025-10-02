@@ -5,7 +5,7 @@ Theme URI: https://themezhut.com/themes/hybridmag/
 Author: ThemezHut
 Author URI: https://themezhut.com
 Description: HybridMag is a modern and stylish WordPress theme for blogs, newspapers, and magazine websites. The advanced options provided with HybridMag allow you to tailor every aspect of your website to match your brand, making it the best choice for online publishers.
-Version: 1.0.7
+Version: 1.0.8
 Tested up to: 6.8
 Requires PHP: 7.0
 License: GNU General Public License v2 or later
@@ -1702,6 +1702,7 @@ html.hm-dark .hm-nav-sticky.hm-header-inner-wrapper, html.hm-dark .hm-header-inn
   background-color: #222222;
 }
 html.hm-dark .hm-search-toggle .hm-svg-icon,
+html.hm-dark .hm-light-dark-toggle .hm-svg-icon,
 html.hm-dark .hm-h-de .hm-header-inner .hm-social-menu a,
 html.hm-dark .hm-h-de .main-navigation a {
   color: #eeeeee;
@@ -1772,6 +1773,9 @@ html.hm-dark .hm-h-lg .main-navigation ul ul li a:hover {
 html.hm-dark .hm-h-lg .hm-slideout-toggle,
 html.hm-dark .hm-h-lg .hm-slideout-toggle:hover {
   color: #dddddd;
+}
+html.hm-dark .hm-h-lg .hm-mobile-menu-toggle {
+  color: #eeeeee;
 }
 html.hm-dark li.hm-tab.th-ui-state-active a {
   color: #eeeeee;
@@ -4049,8 +4053,7 @@ li.hm-tab.th-ui-state-active a {
 .screen-reader-text {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
-  -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
+  clip-path: inset(50%);
   height: 1px;
   margin: -1px;
   overflow: hidden;
@@ -4064,8 +4067,7 @@ li.hm-tab.th-ui-state-active a {
   border-radius: 3px;
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   clip: auto !important;
-  -webkit-clip-path: none;
-          clip-path: none;
+  clip-path: none;
   color: #21759b;
   display: block;
   font-size: 0.875rem;

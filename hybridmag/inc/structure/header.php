@@ -168,7 +168,12 @@ if ( ! function_exists( 'hybridmag_light_dark_toggle' ) ) :
     function hybridmag_light_dark_toggle() {
         ?>
             <div class="hm-light-dark-switch">
-                <button class="hm-light-dark-toggle">
+                <button 
+                    class="hm-light-dark-toggle"
+                    data-dark-text="<?php esc_attr_e( 'Switch to dark mode', 'hybridmag' ); ?>" 
+                    data-light-text="<?php esc_attr_e( 'Switch to light mode', 'hybridmag' ); ?>"    
+                >
+                    <span class="screen-reader-text"><?php esc_html_e( 'Switch to dark mode', 'hybridmag' ); ?></span>
                     <span class="hm-light-icon">
                         <?php hybridmag_the_icon_svg( 'sun1' ); ?>
                     </span>

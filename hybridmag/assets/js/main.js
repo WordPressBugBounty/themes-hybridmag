@@ -99,7 +99,18 @@ hybridmag.searchToggle = {
 		var searchBoxContainer = element.parentElement,
             header              = document.getElementById( 'masthead' ),
             searchBoxContainer  = searchBoxContainer.querySelector('.hm-search-box'),
-            inputField          = searchBoxContainer.querySelector('input.search-field');
+            inputField          = searchBoxContainer.querySelector('input.search-field'),
+            srText              = element.querySelector('.screen-reader-text'),
+            expanded            = element.getAttribute( 'aria-expanded' ) === 'true';
+
+        var text = expanded ? element.dataset.openText : element.dataset.closeText; 
+
+        element.setAttribute('aria-expanded', !expanded);
+        searchBoxContainer.setAttribute('aria-expanded', !expanded);
+        element.setAttribute('aria-label', text);
+
+        // Change screen reader text.
+        srText.textContent = text;
 
 		// Toggle header search class.
 		header.classList.toggle( 'hide-header-search' );
@@ -128,10 +139,6 @@ hybridmag.searchToggle = {
                 self.toggle( this );
             } );
         } ); 
-		
-		// searchButton.addEventListener( 'click', function() {
-		// 	self.toggle( this );
-		// } );
 
 	}
 };
@@ -232,6 +239,8 @@ hybridmag.slideOutSidebar = {
                 var maskId = e.target.id;
 
                 body.classList.remove( 'slideout-opened' );
+                slideOutSidebar.setAttribute('aria-expanded', false);
+                openBtn.setAttribute('aria-expanded', false);
                 self.removeOverlay( maskId );
             }
         } );
@@ -371,15 +380,20 @@ hybridmag.darkModeToggle = {
         // Get the html element
         var html = document.documentElement;
         
-        // Check for saved user preference first
-        if (localStorage.getItem('hybridmagDarkMode') === 'enabled') {
+        // User prference. 
+        var darkModeOnLocal = localStorage.getItem('hybridmagDarkMode');
+
+        if ( darkModeOnLocal === 'enabled' || ( darkModeOnLocal === null && hybridmagAdminSettings.darkModeDefault ) ) {
+            
             html.classList.add('hm-dark');
-        } 
-        // Check for admin default if no user preference
-        else if (localStorage.getItem('hybridmagDarkMode') === null) {
-            if (hybridmagAdminSettings.darkModeDefault) {
-                html.classList.add('hm-dark');
-            }
+
+            // change the default screen reader text.
+            document.querySelectorAll('.hm-light-dark-toggle').forEach(function(element) {
+                var srText = element.querySelector('.screen-reader-text'),
+                    lightModeText = element.dataset.lightText;
+
+                srText.textContent = lightModeText;
+            });
         }
 
         // Initialize the toggle functionality
@@ -387,13 +401,18 @@ hybridmag.darkModeToggle = {
     },
 
     performToggle: function(element) {
-        var html = document.documentElement;
+        var html = document.documentElement,
+            srText = element.querySelector('.screen-reader-text'),
+            darkModeText = element.dataset.darkText,
+            lightModeText = element.dataset.lightText;
 
         if (html.classList.contains('hm-dark')) {
             html.classList.remove('hm-dark');
+            srText.textContent = darkModeText;
             localStorage.setItem('hybridmagDarkMode', 'disabled');
         } else {
             html.classList.add('hm-dark');
+            srText.textContent = lightModeText;
             localStorage.setItem('hybridmagDarkMode', 'enabled');
         }
         

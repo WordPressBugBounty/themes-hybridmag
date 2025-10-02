@@ -6,7 +6,7 @@
  */
 
 if ( ! defined( 'HYBRIDMAG_VERSION' ) ) {
-	define( 'HYBRIDMAG_VERSION', '1.0.7' );
+	define( 'HYBRIDMAG_VERSION', '1.0.8' );
 }
 
 /**

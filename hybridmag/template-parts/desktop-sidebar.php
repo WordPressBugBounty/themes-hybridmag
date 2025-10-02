@@ -7,6 +7,7 @@
 				</div>
 			<?php endif; ?>
 			<button class="hm-slideout-toggle">
+				<span class="screen-reader-text"><?php echo esc_html__( 'Close menu', 'hybridmag' ); ?></span>
 				<?php echo hybridmag_the_icon_svg( 'close' ); ?>
 			</button>
 		</div>

@@ -83,14 +83,14 @@ $hybridmag_highlighted_posts = new WP_Query( $hybridmag_fps_args );
                                         } else {
                                             if ( false === get_theme_mod( 'hybridmag_remove_placeholder', false ) ) {
                                                 $featured_image_url = get_template_directory_uri() . '/assets/images/default.jpg'; ?>
-                                                <img src="<?php echo esc_url( $featured_image_url ); ?>" alt="<?php the_title_attribute(); ?>">
+                                                <img src="<?php echo esc_url( $featured_image_url ); ?>">
                                                 <?php
                                             }
                                         }
                                     ?>
                                 </div>
                                 <div class="hm-fp-overlay">
-                                    <a class="hm-fp-link-overlay" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" aria-label="<?php the_title_attribute(); ?>" rel="bookmark"></a>
+                                    <a class="hm-fp-link-overlay" href="<?php the_permalink(); ?>" aria-label="<?php the_title_attribute(); ?>" rel="bookmark"></a>
                                 </div>
                                 <div class="hm-slide-content">
                                     <div class="hm-slider-details-container hmfpwmeta">
@@ -148,7 +148,7 @@ $hybridmag_highlighted_posts = new WP_Query( $hybridmag_fps_args );
                                 } ?>
                             </div>
                             <div class="hm-fp-overlay">
-                                <a class="hm-fp-link-overlay" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" aria-label="<?php the_title_attribute(); ?>" rel="bookmark"></a>
+                                <a class="hm-fp-link-overlay" href="<?php the_permalink(); ?>" aria-label="<?php the_title_attribute(); ?>" rel="bookmark"></a>
                             </div>
                             <div class="hmhp-content">
                                 <div class="hmhp-details-container">

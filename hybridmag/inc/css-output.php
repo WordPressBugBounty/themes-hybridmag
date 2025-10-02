@@ -485,7 +485,7 @@ if ( ! function_exists( 'hybridmag_custom_css' ) ) {
 
         } else {
             /**
-             * DEFAULT HEADER Layout Menu Style.
+             * Large Layout Menu Style.
              */
             if ( ! empty( $menu_bg_color ) ) {
                 $theme_css .= '
@@ -501,7 +501,8 @@ if ( ! function_exists( 'hybridmag_custom_css' ) ) {
                         color: '. esc_attr( $menu_link_color ) .';
                     }
 
-                    .hm-h-lg .hm-slideout-toggle {
+                    .hm-h-lg .hm-slideout-toggle,
+                    .hm-h-lg .hm-mobile-menu-toggle {
                         color: '. esc_attr( $menu_link_color ) .';
                     }
                 ';
@@ -513,6 +514,7 @@ if ( ! function_exists( 'hybridmag_custom_css' ) ) {
                         color: '. esc_attr( $menu_link_hover_color ) .';
                     }
                     
+                    .hm-h-lg .hm-mobile-menu-toggle:hover,
                     .hm-h-lg .hm-slideout-toggle:hover {
                         color: '. esc_attr( $menu_link_hover_color ) .';
                     }

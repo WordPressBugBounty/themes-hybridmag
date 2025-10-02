@@ -71,7 +71,7 @@ for ( $i = 1; $i <= 5; $i++ ) {
 
                         <div class="hm-tab-post-card">
                             <div class="hm-tab-post-img">
-                                <a href="<?php the_permalink(); ?>">
+                                <a href="<?php the_permalink(); ?>" aria-label="<?php the_title_attribute(); ?>">
                                     <?php the_post_thumbnail( 'hybridmag-archive-image' ); ?>
                                 </a>
                             </div>

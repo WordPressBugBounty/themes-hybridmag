@@ -17,11 +17,17 @@ if ( ! function_exists( 'hybridmag_search_box' ) ) :
     function hybridmag_search_box() {
         ?>
             <div class="hm-search-container">
-                <button class="hm-search-toggle">
+                <button 
+                    class="hm-search-toggle"
+                    aria-expanded="false"
+                    data-open-text="<?php esc_attr_e( 'Open Search', 'hybridmag' ); ?>"
+                    data-close-text="<?php esc_attr_e( 'Close Search', 'hybridmag' ); ?>"
+                >
+                    <span class="screen-reader-text"><?php esc_html_e( 'Open Search', 'hybridmag' ); ?></span>
                     <span class="hm-search-icon"><?php hybridmag_the_icon_svg( 'search' ) ?></span>
                     <span class="hm-close-icon"><?php hybridmag_the_icon_svg( 'close' ) ?></span>
                 </button>
-                <div class="hm-search-box">
+                <div class="hm-search-box" aria-expanded="false">
                     <?php get_search_form(); ?>
                 </div><!-- hm-search-box -->
             </div><!-- hm-search-container -->
@@ -100,7 +106,8 @@ if ( ! function_exists( 'hybridmag_slide_out_menu_toggle' ) ) :
 
     function hybridmag_slide_out_menu_toggle() {
        ?>
-            <button class="hm-slideout-toggle">
+            <button class="hm-slideout-toggle" aria-controls="hm-slideout-sidebar">
+                <span class="screen-reader-text"><?php esc_html_e( 'Open menu', 'hybridmag' ); ?></span>
                 <span class="hm-menu-bars"><?php echo hybridmag_the_icon_svg( 'menu-bars' ); ?></span>
                 <span class="hm-menu-bars-close"><?php echo hybridmag_the_icon_svg( 'close' ); ?></span>
             </button>

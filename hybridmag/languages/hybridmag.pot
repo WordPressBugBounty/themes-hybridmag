@@ -3,16 +3,16 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: HybridMag 1.0.7\n"
+"Project-Id-Version: HybridMag 1.0.8\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/hybridmag\n"
-"POT-Creation-Date: 2025-06-17 11:38+0530\n"
+"POT-Creation-Date: 2025-10-01 21:31+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ThemezHut\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.7\n"
 "X-Domain: hybridmag\n"
 "X-Poedit-KeywordsList: __;_e;esc_html__;esc_html_e;esc_attr__;esc_attr_e;_n;_x;_nx;esc_html_x\n"
 "X-Poedit-Basepath: ..\n"
@@ -439,7 +439,7 @@ msgstr ""
 msgid "Hide on Mobile Header"
 msgstr ""
 
-#: inc/customizer/customizer.php:1000 inc/structure/header.php:210
+#: inc/customizer/customizer.php:1000 inc/structure/header.php:215
 msgid "Subscribe"
 msgstr ""
 
@@ -1293,6 +1293,26 @@ msgstr ""
 msgid "Main Menu"
 msgstr ""
 
+#: inc/structure/header.php:173 inc/structure/header.php:176
+msgid "Switch to dark mode"
+msgstr ""
+
+#: inc/structure/header.php:174
+msgid "Switch to light mode"
+msgstr ""
+
+#: inc/structure/navigation.php:23 inc/structure/navigation.php:26
+msgid "Open Search"
+msgstr ""
+
+#: inc/structure/navigation.php:24
+msgid "Close Search"
+msgstr ""
+
+#: inc/structure/navigation.php:110
+msgid "Open menu"
+msgstr ""
+
 #: inc/template-functions.php:359
 msgid "Read more"
 msgstr ""
@@ -1442,6 +1462,10 @@ msgstr ""
 #: template-parts/content-single.php:52
 #, php-format
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: template-parts/desktop-sidebar.php:10
+msgid "Close menu"
 msgstr ""
 
 #: template-parts/featured/slider.php:122

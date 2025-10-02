@@ -147,7 +147,7 @@ class HybridMag_Sidebar_Posts extends WP_Widget {
 					<div class="hms-post clearfix">
 						<?php if ( has_post_thumbnail() ) { ?>
 							<div class="hms-thumb">
-								<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">	
+								<a href="<?php the_permalink(); ?>" rel="bookmark" aria-label="<?php the_title_attribute(); ?>">	
 									<?php the_post_thumbnail( 'thumbnail' ); ?>
 								</a>
 							</div>
