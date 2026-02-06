@@ -2,9 +2,9 @@
 
 Contributors: pubudu-malalasekara
 Requires at least: 5.0
-Tested up to: 6.8
+Tested up to: 6.9
 Requires PHP: 7.0
-Stable tag: 1.0.8
+Stable tag: 1.1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,6 +21,20 @@ HybridMag is a modern and stylish WordPress theme for blogs, newspapers, and mag
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+
+= 1.1.0 =
+* Fix: Changed Demo page names to prevent conflicts. 
+* Fix: Fixed a demo import issue.
+
+= 1.0.9 =
+* New: Added demo import option.
+* New: Added border color option.
+* New: Updated the list of google fonts.
+* New: Added a control to change space between menu items.
+* New: Added theme support for 'custom-spacing'.
+* New: Added controls to change category colors.
+* New: Added a new block style for Core "Heading" block.
+* Fix: Removed margin-bottom from "Spacer" block.
 
 = 1.0.8 =
 * Fix: Fixed a few accessibility issues.

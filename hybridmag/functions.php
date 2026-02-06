@@ -6,7 +6,7 @@
  */
 
 if ( ! defined( 'HYBRIDMAG_VERSION' ) ) {
-	define( 'HYBRIDMAG_VERSION', '1.0.8' );
+	define( 'HYBRIDMAG_VERSION', '1.1.0' );
 }
 
 /**
@@ -121,6 +121,9 @@ function hybridmag_setup() {
 			'flex-width' 	=> true,
 		)
 	);
+
+	// Add block custom spacing support.
+	add_theme_support( 'custom-spacing' );
 
 	// Define and register starter content to showcase the theme on new sites.
 	$starter_content = array(

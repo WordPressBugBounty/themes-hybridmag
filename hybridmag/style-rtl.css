@@ -5,8 +5,8 @@ Theme URI: https://themezhut.com/themes/hybridmag/
 Author: ThemezHut
 Author URI: https://themezhut.com
 Description: HybridMag is a modern and stylish WordPress theme for blogs, newspapers, and magazine websites. The advanced options provided with HybridMag allow you to tailor every aspect of your website to match your brand, making it the best choice for online publishers.
-Version: 1.0.8
-Tested up to: 6.8
+Version: 1.1.0
+Tested up to: 6.9
 Requires PHP: 7.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -838,8 +838,9 @@ a.hm-readmore-btn:visited {
   font-weight: bold;
   margin: 0 8px;
 }
-.hm-cta-btn:visited {
+.hm-cta-btn:active, .hm-cta-btn:focus {
   color: var(--hybridmag-color-button-hover-text);
+  background: var(--hybridmag-color-button-hover-background);
 }
 .hm-cta-btn:hover {
   color: var(--hybridmag-color-button-hover-text);
@@ -1585,6 +1586,9 @@ textarea {
 .hm-footer-widget-area .widget {
   margin: 50px 0;
 }
+.hm-footer-widget-area h1, .hm-footer-widget-area h2, .hm-footer-widget-area h3, .hm-footer-widget-area h4, .hm-footer-widget-area h5, .hm-footer-widget-area h6 {
+  color: #ffffff;
+}
 
 .hm-footer-widget-area:before,
 .hm-footer-widget-area:after {
@@ -1787,6 +1791,9 @@ html.hm-dark .hm-entry .entry-content {
 html.hm-dark .pagination .page-numbers {
   background: #111111;
 }
+html.hm-dark .pagination .page-numbers.current {
+  background: var(--hybridmag-color-primary);
+}
 html.hm-dark .post-thumbnail figcaption {
   color: #ccc;
 }
@@ -1857,6 +1864,24 @@ html.hm-dark .wp-block-table :where(figcaption) {
 html.hm-dark .hm-tagged, html.hm-dark .hm-tags-links a {
   color: #f5f5f5;
   background-color: #111111;
+}
+html.hm-dark .site-footer,
+html.hm-dark .hm-footer-bottom,
+html.hm-dark .hm-footer-widget-area {
+  background-color: #272c30;
+}
+html.hm-dark .site-footer,
+html.hm-dark .hm-footer-bottom {
+  color: #cccccc;
+}
+html.hm-dark .site-footer .widget-title {
+  color: #ffffff;
+}
+html.hm-dark .site-footer a {
+  color: #cccccc;
+}
+html.hm-dark .site-footer a:hover {
+  color: #ffffff;
 }
 
 /*--------------------------------------------------------------
@@ -2372,6 +2397,9 @@ html.hm-dark .hm-tagged, html.hm-dark .hm-tags-links a {
 .hm-entry .entry-content > *:last-child {
   margin-bottom: 0;
 }
+.hm-entry .entry-content .wp-block-spacer {
+  margin-bottom: 0;
+}
 .hm-entry .entry-content-wrapper .entry-meta {
   margin-top: 20px;
 }
@@ -2625,6 +2653,9 @@ html.hm-dark .hm-tagged, html.hm-dark .hm-tags-links a {
 .hm-arc-img-bh.hm-cl-sep .post-thumbnail {
   margin-bottom: 0;
 }
+.hm-arc-img-bh.hm-cl-one .post-thumbnail {
+  border-radius: var(--hybridmag-global-border-radius);
+}
 
 .hm-arc-img-ah.hm-cl-sep .entry-header {
   margin-bottom: 0;
@@ -2638,6 +2669,9 @@ html.hm-dark .hm-tagged, html.hm-dark .hm-tags-links a {
 }
 .hm-arc-img-ah.hm-cl-sep .hm-entry .entry-title {
   margin-bottom: 0;
+}
+.hm-arc-img-ah.hm-cl-one .post-thumbnail {
+  border-radius: var(--hybridmag-global-border-radius);
 }
 
 .hm-arc-no-img.hm-cl-sep .hm-entry {
@@ -3235,6 +3269,10 @@ html.hm-dark .hm-tagged, html.hm-dark .hm-tags-links a {
   color: #ffffff !important;
 }
 
+.hm-no-pt .hm-entry-single .entry-content {
+  margin-top: 0;
+}
+
 /* Comments
 --------------------------------------------- */
 .hm-cl-sep .comments-area {
@@ -3516,7 +3554,7 @@ footer.comment-meta {
   margin-top: 0;
 }
 .widget .wp-block-spacer {
-  margin-bottom: -50px;
+  margin-bottom: 0;
 }
 
 .hm-footer-widget-area .widget:first-of-type {
@@ -3902,6 +3940,21 @@ li.hm-tab.th-ui-state-active a {
 }
 
 .th-hm-es .article-section-title {
+  border-color: var(--hybridmag-color-primary);
+  border-bottom: 2px solid var(--hybridmag-color-primary);
+  display: inline-block;
+  line-height: 1.2;
+}
+
+.th-hm-es .bnm-bhs-2 .article-section-title {
+  border-bottom: none;
+}
+
+.hm-dark .bnm-thumbnail-swiper.swiper {
+  background: #111;
+}
+
+.is-style-hybridmag-heading-s1 {
   border-bottom: 2px solid var(--hybridmag-color-primary);
   display: inline-block;
   line-height: 1.2;
@@ -3925,6 +3978,10 @@ li.hm-tab.th-ui-state-active a {
 
 /* Magazine Companion
 --------------------------------------------- */
+:root {
+  --bnm-border-color: var(--hybridmag-color-border);
+}
+
 .wpbnmpb1,
 .wpbnmpb2,
 .wpbnmspp {

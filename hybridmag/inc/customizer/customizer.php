@@ -831,6 +831,28 @@ function hybridmag_customize_register( $wp_customize ) {
 		)
 	) );
 
+	// Primary Menu - Space between Menu Items
+	$wp_customize->add_setting( 
+		'hybridmag_space_menu_items',
+		array(
+			'default'           => 24,
+			'sanitize_callback' => 'hybridmag_sanitize_slider_number_input',
+			'transport'         => 'postMessage'
+		)
+	);
+	$wp_customize->add_control( 
+		new HybridMag_Slider_Control( $wp_customize, 'hybridmag_space_menu_items',
+		array(
+			'label'         => esc_html__( 'Space Between Menu Items (px)', 'hybridmag' ),
+			'section'       => 'hybridmag_primary_menu_section',
+			'input_attrs'   => array(
+				'min'   => 8,
+				'max'   => 100,
+				'step'  => 1,
+			)
+		)
+	) );	
+
 	// Social Menu Section
 	$wp_customize->add_section(
 		'hybridmag_social_menu_section',
@@ -1431,6 +1453,26 @@ function hybridmag_customize_register( $wp_customize ) {
 		)
 	);
 
+	// Border Color - Global.
+	$wp_customize->add_setting(
+		'hybridmag_border_color',
+		array(
+			'default'			=> '',
+			'capability'		=> 'edit_theme_options',
+			'sanitize_callback'	=> 'hybridmag_sanitize_hex_color'
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control( 
+			$wp_customize,
+			'hybridmag_border_color',
+			array(
+				'section'		    => 'hybridmag_base_colors',
+				'label'			    => esc_html__( 'Border Color', 'hybridmag' ),
+			)
+		)
+	);
+
 	// Button Background Color.
 	$wp_customize->add_setting(
 		'hybridmag_button_bg_color',
@@ -1599,6 +1641,27 @@ function hybridmag_customize_register( $wp_customize ) {
 			array(
 				'section'		    => 'hybridmag_header_colors',
 				'label'			    => esc_html__( 'Menu Link Color: Hover/Active', 'hybridmag' ),
+				'priority'	  		=> 30,
+			)
+		)
+	);
+
+	// Menu Links Background Color: Hover
+	$wp_customize->add_setting(
+		'hybridmag_menu_link_bg_hover_color',
+		array(
+			'default'			=> '',
+			'capability'		=> 'edit_theme_options',
+			'sanitize_callback'	=> 'hybridmag_sanitize_hex_color'
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control( 
+			$wp_customize,
+			'hybridmag_menu_link_bg_hover_color',
+			array(
+				'section'		    => 'hybridmag_header_colors',
+				'label'			    => esc_html__( 'Menu Link Background Color: Hover/Active', 'hybridmag' ),
 				'priority'	  		=> 30,
 			)
 		)
@@ -1995,6 +2058,63 @@ function hybridmag_customize_register( $wp_customize ) {
 			array(
 				'section'		    => 'hybridmag_category_colors',
 				'label'			    => esc_html__( 'Category Text Color', 'hybridmag' ),
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'hybridmag_category_bg_color',
+		array(
+			'default'			=> '',
+			'capability'		=> 'edit_theme_options',
+			'sanitize_callback'	=> 'hybridmag_sanitize_alpha_color'
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control( 
+			$wp_customize,
+			'hybridmag_category_bg_color',
+			array(
+				'section'		    => 'hybridmag_category_colors',
+				'label'			    => esc_html__( 'Category Background Color', 'hybridmag' ),
+			)
+		)
+	);
+
+		$wp_customize->add_setting(
+		'hybridmag_category_text_hover_color',
+		array(
+			'default'			=> '',
+			'capability'		=> 'edit_theme_options',
+			'sanitize_callback'	=> 'hybridmag_sanitize_alpha_color'
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control( 
+			$wp_customize,
+			'hybridmag_category_text_hover_color',
+			array(
+				'section'		    => 'hybridmag_category_colors',
+				'label'			    => esc_html__( 'Category Text Color: Hover/Active', 'hybridmag' ),
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'hybridmag_category_bg_hover_color',
+		array(
+			'default'			=> '',
+			'capability'		=> 'edit_theme_options',
+			'sanitize_callback'	=> 'hybridmag_sanitize_alpha_color'
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control( 
+			$wp_customize,
+			'hybridmag_category_bg_hover_color',
+			array(
+				'section'		    => 'hybridmag_category_colors',
+				'label'			    => esc_html__( 'Category Background Color: Hover/Active', 'hybridmag' ),
 			)
 		)
 	);

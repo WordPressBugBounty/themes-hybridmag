@@ -57,7 +57,7 @@ function hybridmag_themeinfo_page_render() { ?>
 
         <?php $theme_info = wp_get_theme(); ?>
 
-        <?php if ( defined( 'HYBRIDMAG_PRO_VERSION' ) ) : ?>
+
 
             <h2 class="nav-tab-wrapper">
                 <a class="nav-tab <?php if ( $_GET['page'] == 'hybridmag' && ! isset( $_GET['tab'] ) ) echo 'nav-tab-active'; ?>" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'hybridmag' ), 'themes.php' ) ) ); ?>">
@@ -85,13 +85,7 @@ function hybridmag_themeinfo_page_render() { ?>
 
             </div><!-- .th-nav-tab-inner -->
         
-        <?php else : ?>
 
-            <div class="th-nav-tab-inner">
-                <?php hybridmag_admin_welcome_page(); ?>
-            </div><!-- .th-nav-tab-inner -->
-
-        <?php endif; ?>
 
     </div><!-- .th-theme-info-page -->
 
@@ -238,6 +232,14 @@ function hybridmag_admin_welcome_page() {
                 <h3><?php esc_html_e( 'Theme Demo', 'hybridmag' ); ?></h3>
                 <p><?php esc_html_e( 'See the theme preview of free version.', 'hybridmag' ) ?></p>
                 <a class="button" target="_blank" href="<?php echo esc_url( 'https://themezhut.com/demo/hybridmag/' ); ?>"><?php esc_html_e( 'Theme Preview','hybridmag' ); ?></a>    
+            </div>
+            </div>
+
+            <div class="th-theme-page-infobox">
+            <div class="th-theme-infobox-content">
+                <h3><?php esc_html_e( 'Demo Installation', 'hybridmag' ); ?></h3>
+                <p><?php esc_html_e( 'Learn about starter sites.', 'hybridmag' ) ?></p>
+                <a class="button" target="_blank" href="<?php echo esc_url( 'https://themezhut.com/hybridmag-wordpress-theme-documentation/#demos' ); ?>"><?php esc_html_e( 'Read the documentation.','hybridmag' ); ?></a>    
             </div>
             </div>
         </div>

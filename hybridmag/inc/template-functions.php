@@ -147,6 +147,15 @@ function hybridmag_body_classes( $classes ) {
 		$classes[] = 'hm-has-dm-logo';
 	}
 
+	if ( is_page() ) {
+		$post_id = get_queried_object_id();
+		$hide_page_title = get_post_meta( $post_id, '_hybridmag_hide_page_title', true );
+
+		if ( $hide_page_title ) {
+			$classes[] = 'hm-no-pt';
+		}
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'hybridmag_body_classes' );

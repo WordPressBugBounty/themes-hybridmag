@@ -25,6 +25,14 @@ if ( function_exists( 'register_block_style' ) ) {
             );
         }
 
+        register_block_style(
+			'core/heading',
+			array(
+				'name'  => 'hybridmag-heading-s1',
+				'label' => esc_html__( 'Border Bottom', 'hybridmag' ),
+			)
+		);
+
     }
     add_action( 'init', 'hybridmag_register_block_styles' );
 }

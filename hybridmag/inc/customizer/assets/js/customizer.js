@@ -74,7 +74,7 @@
 		} )
 	} );*/
 
-	// Menu height.
+	// Menu Line height.
 	wp.customize( 'hybridmag_pmenu_line_height', function( value ) {
 		value.bind( function( to ) {
 			if( ( 'blank' !== to ) && ( to >= 20 ) && ( to <= 300 ) ) {
@@ -108,6 +108,21 @@
 				$( '.hm-h-de .hm-header-inner' ).css( {
 					'min-height': 'inherit',
 				} );
+			}
+		} );
+	} ); 
+
+	// Space between menu items.
+	wp.customize( 'hybridmag_space_menu_items', function( value ) {
+		value.bind( function( to ) {
+			to = parseInt(to, 10);
+			if (to >= 8 && to <= 100) {
+				// Apply half of the space to left and right padding
+				var half = to / 2;
+				$('.main-navigation a').css({
+					'padding-left': half + 'px',
+					'padding-right': half + 'px'
+				});
 			}
 		} );
 	} ); 
