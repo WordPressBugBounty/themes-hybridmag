@@ -7,9 +7,12 @@
  * @package HybridMag
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+$hybridmag_sidebar_id = hybridmag_get_sidebar_id();
+
+if ( ! is_active_sidebar( $hybridmag_sidebar_id ) ) {
 	return;
 }
+
 ?>
 
 <aside id="secondary" class="widget-area">
@@ -21,7 +24,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	do_action( 'hybridmag_before_main_sidebar' );
 	
 	
-	dynamic_sidebar( 'sidebar-1' ); 
+	dynamic_sidebar( $hybridmag_sidebar_id ); 
 
 	/**
 	 * After sidebar hook.

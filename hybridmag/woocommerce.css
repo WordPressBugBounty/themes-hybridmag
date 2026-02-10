@@ -1,0 +1,42 @@
+.entry-content .wc-block-cart__submit-button,
+.wc-block-cart__submit-button {
+    font-weight: 700;
+    text-decoration: none;
+    background-color: #7f54b3;
+}    
+
+.entry-content .wc-block-cart__submit-button:hover,
+.wc-block-cart__submit-button:hover {
+    color: #fff;
+    background-color: #7f54b3;
+}
+
+.woocommerce #respond input#submit, 
+.woocommerce a.button, 
+.woocommerce button.button, 
+.woocommerce input.button {
+    padding: 0.8rem 1rem;
+}
+
+.woocommerce ul.products li.product a.button {
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+}
+
+.woocommerce ul.products li.product .button {
+    font-size: 0.938rem;
+}
+
+table.wc-block-cart-items .wc-block-cart-items__row .wc-block-components-product-name {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.woocommerce table.shop_attributes td {
+    padding: 0 8px;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li a:focus {
+    outline: 0;
+}

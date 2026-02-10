@@ -170,6 +170,16 @@ function hybridmag_pingback_header() {
 }
 add_action( 'wp_head', 'hybridmag_pingback_header' );
 
+if ( ! function_exists( 'hybridmag_get_sidebar_id' ) ) {
+	/**
+	 * Get the id of the sidebar
+	 * 
+	 * @since 1.1.1
+	 */
+	function hybridmag_get_sidebar_id() {
+		return apply_filters( 'hybridmag_sidebar_id', 'sidebar-1' );
+	}
+}
 
 if ( ! function_exists( 'hybridmag_get_layout' ) ) {
 	/**

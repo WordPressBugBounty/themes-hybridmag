@@ -1,6 +1,6 @@
 <?php
 /**
- * Block styles for Magazine Companion Blocks.
+ * Block styles for Post Blocks & Tools Blocks.
  */
 
 if ( function_exists( 'register_block_style' ) ) {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Demo setup data needed for our Magazine Companion plugin's demo importer.
+ * Demo setup data needed for our Post Blocks & Tools plugin's demo importer.
  */
 function hybridmag_demo_importer_files() {
     $demo_data = array(

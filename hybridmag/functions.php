@@ -6,7 +6,7 @@
  */
 
 if ( ! defined( 'HYBRIDMAG_VERSION' ) ) {
-	define( 'HYBRIDMAG_VERSION', '1.1.0' );
+	define( 'HYBRIDMAG_VERSION', '1.1.1' );
 }
 
 /**
@@ -483,6 +483,13 @@ require get_template_directory() . '/inc/structure/header.php';
 require get_template_directory() . '/inc/structure/navigation.php';
 require get_template_directory() . '/inc/structure/featured.php';
 require get_template_directory() . '/inc/structure/footer.php';
+
+/**
+ * Load WooCommerce compatibility file.
+ */
+if ( class_exists( 'WooCommerce' ) ) {
+	require get_template_directory() . '/inc/woocommerce.php';
+}
 
 /**
  * Demo data.

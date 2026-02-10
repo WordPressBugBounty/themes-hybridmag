@@ -102,7 +102,7 @@ function hybridmag_starter_templates() {
 }
 
 /**
- * Recommend Magazine Companion plugin to install demos.
+ * Recommend Post Blocks & Tools plugin to install demos.
  */
 function hybridmag_plugin_for_demo_install() {
 
@@ -126,9 +126,9 @@ function hybridmag_plugin_for_demo_install() {
         $button_html = sprintf('<a class="themezhut-plugin-install install-now button-secondary button" data-slug="%1$s" href="%2$s" aria-label="%3$s" data-name="%4$s">%5$s</a>',
             esc_attr( $slug ),
             esc_url( $plugin_install_url ),
-            /* translators: %s: theme name */
-            esc_html__( 'Install Magazine Companion Plugin Now', 'hybridmag' ),
-            esc_html__( 'Magazine Companion', 'hybridmag' ),
+            /* translators: %s: plugin name */
+            esc_html__( 'Install Post Blocks & Tools Plugin Now', 'hybridmag' ),
+            esc_html__( 'Post Blocks & Tools', 'hybridmag' ),
             esc_html__( 'Install and activate', 'hybridmag' )
         );
 
@@ -154,9 +154,9 @@ function hybridmag_plugin_for_demo_install() {
         $button_html = sprintf('<a class="themezhut-plugin-activate activate-now button-primary button" data-slug="%1$s" href="%2$s" aria-label="%3$s" data-name="%4$s">%5$s</a>',
             esc_attr( $slug ),
             esc_url( $plugin_activate_link ),
-            /* translators: %s: theme name */
-            esc_html__( 'Activate Magazine Companion Plugin Now', 'hybridmag' ),
-            esc_html__( 'Magazine Companion', 'hybridmag' ),
+            /* translators: %s: plugin name */
+            esc_html__( 'Activate Post Blocks & Tools Plugin Now', 'hybridmag' ),
+            esc_html__( 'Post Blocks & Tools', 'hybridmag' ),
             $activate_string
         );
 
@@ -166,7 +166,7 @@ function hybridmag_plugin_for_demo_install() {
     <div class="th-demo-plugin-notice">
         <p>
         <?php 
-            echo esc_html__( 'To import demos, simply install and activate our "Magazine Companion" plugin. Click to install and activate.', 'hybridmag' ); 
+            echo esc_html__( 'To import demos, simply install and activate our "Post Blocks & Tools" plugin. Click to install and activate.', 'hybridmag' ); 
         ?>
         </p>
         <?php echo $button_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped above ?>

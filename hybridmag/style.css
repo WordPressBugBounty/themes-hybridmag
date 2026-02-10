@@ -5,13 +5,13 @@ Theme URI: https://themezhut.com/themes/hybridmag/
 Author: ThemezHut
 Author URI: https://themezhut.com
 Description: HybridMag is a modern and stylish WordPress theme for blogs, newspapers, and magazine websites. The advanced options provided with HybridMag allow you to tailor every aspect of your website to match your brand, making it the best choice for online publishers.
-Version: 1.1.0
+Version: 1.1.1
 Tested up to: 6.9
 Requires PHP: 7.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: hybridmag
-Tags: news, blog, grid-layout, right-sidebar, two-columns, custom-logo, custom-menu, featured-images, footer-widgets, theme-options, threaded-comments, translation-ready, rtl-language-support
+Tags: news, blog, grid-layout, right-sidebar, two-columns, custom-logo, custom-menu, featured-images, footer-widgets, theme-options, threaded-comments, translation-ready, rtl-language-support, e-commerce
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned.
@@ -3196,7 +3196,8 @@ html.hm-dark .site-footer a:hover {
   margin: 40px 0;
 }
 
-.hm-cl-sep .hm-entry-single {
+.hm-cl-sep .hm-entry-single,
+.hm-cl-sep .hm-woocommerce-container {
   margin-bottom: 35px;
   padding: var(--hybridmag-global-inner-spacing);
   background: var(--hybridmag-color-bg-cl-sep-content);
@@ -3976,7 +3977,7 @@ li.hm-tab.th-ui-state-active a {
   display: block;
 }
 
-/* Magazine Companion
+/* Post Blocks & Tools
 --------------------------------------------- */
 :root {
   --bnm-border-color: var(--hybridmag-color-border);

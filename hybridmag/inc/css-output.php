@@ -840,8 +840,6 @@ if ( ! function_exists( 'hybridmag_custom_css' ) ) {
             $output .= '/* Custom CSS */'. $theme_css;
         }
 
-        //return $output;
-
         /**
          * hybridmag_theme_custom_css hook since HybridMag 1.0.0
          */

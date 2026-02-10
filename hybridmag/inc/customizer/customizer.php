@@ -2154,15 +2154,6 @@ function hybridmag_customize_register( $wp_customize ) {
 		)
 	);
 
-	$wp_customize->add_section(
-		'hybridmag_sfp_section',
-		array(
-			'title' 	=> esc_html__( 'Small Posts Top', 'hybridmag' ),
-			'panel'		=> 'hybridmag_featured_panel',
-			'priority' 	=> 5,
-		)
-	);
-
 	/**
 	 * Slider + 2 Posts Section
 	 */

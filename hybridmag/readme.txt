@@ -4,7 +4,7 @@ Contributors: pubudu-malalasekara
 Requires at least: 5.0
 Tested up to: 6.9
 Requires PHP: 7.0
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,6 +21,10 @@ HybridMag is a modern and stylish WordPress theme for blogs, newspapers, and mag
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+
+= 1.1.1 =
+* New: Added initial WooCommerce compatibility.
+* New: Added a sidebar layout option for WooCommerce shop pages (Customize > WooCommerce > General).
 
 = 1.1.0 =
 * Fix: Changed Demo page names to prevent conflicts. 
@@ -41,7 +45,7 @@ HybridMag is a modern and stylish WordPress theme for blogs, newspapers, and mag
 
 = 1.0.7 =
 * New: Added an option to set "Dark Mode" as the default color mode.
-* New: Added block styles for blocks provided by the "Magazine Companion" plugin.
+* New: Added block styles for blocks provided by the "Post Blocks & Tools" plugin.
 * New: Added a metabox option to enable the Block Editor per post/page when the Classic Editor is set as default.
 * Fix: Fixed an issue where breadcrumb links were not clickable.
 * Fix: Fixed duplicate featured image display on pages.
@@ -60,7 +64,7 @@ HybridMag is a modern and stylish WordPress theme for blogs, newspapers, and mag
 
 = 1.0.3 =
 * Fix: Fixed a few color issues on dark mode.
-* New: Improved support for "Magazine Companion" plugin.
+* New: Improved support for "Post Blocks & Tools" plugin.
 
 = 1.0.2 =
 * Changed logo recommended width and height.

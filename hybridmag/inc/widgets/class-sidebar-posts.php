@@ -12,7 +12,7 @@ class HybridMag_Sidebar_Posts extends WP_Widget {
 		parent::__construct(
 			'hybridmag_sidebar_posts', // Base ID
 			esc_html__( 'HybridMag: Sidebar Posts', 'hybridmag' ), // Name
-			array( 'description' => esc_html__( 'Displays popular posts, latest posts or latest posts from a choosen cateogry. Use this widget in the main sidebars.', 'hybridmag' ), ) // Args
+			array( 'description' => esc_html__( 'Displays popular posts, latest posts or latest posts from a choosen category. Use this widget in the main sidebars.', 'hybridmag' ), ) // Args
 		);
 	}
 
