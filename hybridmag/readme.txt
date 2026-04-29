@@ -2,9 +2,9 @@
 
 Contributors: pubudu-malalasekara
 Requires at least: 5.0
-Tested up to: 6.9
+Tested up to: 7.0
 Requires PHP: 7.0
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,6 +21,10 @@ HybridMag is a modern and stylish WordPress theme for blogs, newspapers, and mag
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+
+= 1.1.2 =
+* Changed the screenshot.
+* Fixed a translation issue.
 
 = 1.1.1 =
 * New: Added initial WooCommerce compatibility.
@@ -108,9 +112,9 @@ Image 2 shown in screenshot.png, Copyright PxHere
 License: CC0 Public Domain
 Source: https://pxhere.com/en/photo/899371
 
-Image 3 shown in screenshot.png, Copyright PxHere
+Image 3 shown in screenshot.png, Copyright Burst
 License: CC0 Public Domain
-Source: https://pxhere.com/en/photo/937093
+Source: https://stocksnap.io/photo/beach-ocean-IM7VXWHJAP
 
 Image 4 shown in screenshot.png, Copyright PxHere
 License: CC0 Public Domain
@@ -124,6 +128,6 @@ Image 6 shown in screenshot.png Copyright PxHere
 License: CC0 Public Domain
 Source: https://pxhere.com/en/photo/23989
 
-Image 7 shown in screenshot.png Copyright Mike Moloney
+Image 7 shown in screenshot.png Copyright PxHere
 License: CC0 Public Domain
-Source: https://stocksnap.io/photo/america-boat-XMKNFV44W9
+Source: https://pxhere.com/en/photo/997770

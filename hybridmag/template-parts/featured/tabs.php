@@ -94,7 +94,10 @@ for ( $i = 1; $i <= 5; $i++ ) {
 
                 <?php
                     $view_all_link = hybridmag_get_viewall_link( $cat );
-                    $view_all_text = get_theme_mod( 'hybridmag_tabbed_view_all_text', 'View More' );
+                    $view_all_text = get_theme_mod(
+                        'hybridmag_tabbed_view_all_text',
+                        esc_html__( 'View More', 'hybridmag' )
+                    );
 
                     if ( ! empty( $view_all_link ) && ! empty( $view_all_text ) ) {
                         echo '<span class="hm-tabs-view-more">';

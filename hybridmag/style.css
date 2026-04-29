@@ -5,8 +5,8 @@ Theme URI: https://themezhut.com/themes/hybridmag/
 Author: ThemezHut
 Author URI: https://themezhut.com
 Description: HybridMag is a modern and stylish WordPress theme for blogs, newspapers, and magazine websites. The advanced options provided with HybridMag allow you to tailor every aspect of your website to match your brand, making it the best choice for online publishers.
-Version: 1.1.1
-Tested up to: 6.9
+Version: 1.1.2
+Tested up to: 7.0
 Requires PHP: 7.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -2082,17 +2082,17 @@ html.hm-dark .site-footer a:hover {
 .hm-h-lg .main-navigation ul ul li a:hover::before {
   display: none;
 }
-.hm-h-lg .main-navigation ul ul .current_page_item > a,
-.hm-h-lg .main-navigation ul ul .current-menu-item > a,
-.hm-h-lg .main-navigation ul ul .current_page_ancestor > a,
-.hm-h-lg .main-navigation ul ul .current-menu-ancestor > a {
-  background: #fafafa;
-}
 .hm-h-lg .main-navigation ul ul .current_page_item > a::before,
 .hm-h-lg .main-navigation ul ul .current-menu-item > a::before,
 .hm-h-lg .main-navigation ul ul .current_page_ancestor > a::before,
 .hm-h-lg .main-navigation ul ul .current-menu-ancestor > a::before {
   display: none;
+}
+.hm-h-lg .main-navigation ul ul .current_page_item > a,
+.hm-h-lg .main-navigation ul ul .current-menu-item > a,
+.hm-h-lg .main-navigation ul ul .current_page_ancestor > a,
+.hm-h-lg .main-navigation ul ul .current-menu-ancestor > a {
+  background: #fafafa;
 }
 .hm-h-lg .main-navigation ul ul a {
   color: #2c2b2b;
@@ -3108,14 +3108,14 @@ html.hm-dark .site-footer a:hover {
 }
 
 /* Featured Posts Small */
-.hm-fp-small-top {
-  margin-bottom: 50px;
-}
 @media (min-width: 600px) {
   .hm-fp-small-top {
     display: flex;
     gap: 30px;
   }
+}
+.hm-fp-small-top {
+  margin-bottom: 50px;
 }
 
 .hm-fp-small {
@@ -3661,12 +3661,6 @@ li.hm-tab.th-ui-state-active a {
   margin-bottom: 80px;
 }
 
-.hm-tabs-view-more {
-  text-align: center;
-  font-weight: var(--hybridmag-font-weight-headings);
-  margin: 20px 0 0;
-  display: block;
-}
 @media (min-width: 768px) {
   .hm-tabs-view-more {
     position: absolute;
@@ -3676,6 +3670,12 @@ li.hm-tab.th-ui-state-active a {
     font-size: var(--hybridmag-font-size-sm);
     text-align: right;
   }
+}
+.hm-tabs-view-more {
+  text-align: center;
+  font-weight: var(--hybridmag-font-weight-headings);
+  margin: 20px 0 0;
+  display: block;
 }
 
 .hm-sidebar-posts .widget-title {
