@@ -308,17 +308,155 @@ add_filter( 'nav_menu_item_title', 'hybridmag_dropdown_icon_to_menu_link', 10, 4
  * @return string The menu item output with social icon.
  */
 function hybridmag_nav_menu_social_icons( $item_output, $item, $depth, $args ) {
-	// Change SVG icon inside social links menu if there is supported URL.
-	if ( 'social' === $args->theme_location ) {
-		$svg = HybridMag_SVG_Icons::get_social_link_svg( $item->url );
-		if ( empty( $svg ) ) {
-			$svg = hybridmag_get_icon_svg( 'link' );
-		}
-		$item_output = str_replace( $args->link_after, '</span>' . $svg, $item_output );
+
+	if ( 'social' !== $args->theme_location ) {
+		return $item_output;
 	}
+
+	$selected_icon = get_post_meta(
+		$item->ID,
+		'_hybridmag_social_menu_icon',
+		true
+	);
+
+	// Use manually selected icon first.
+	if ( $selected_icon ) {
+		$svg = HybridMag_SVG_Icons::get_svg(
+			$selected_icon,
+			'social'
+		);		
+	} else {
+		// Fallback to URL detection.
+		$svg = HybridMag_SVG_Icons::get_social_link_svg( $item->url );
+	}
+
+	if ( empty( $svg ) ) {
+		$svg = hybridmag_get_icon_svg( 'link' );
+	}
+
+	$item_output = str_replace( $args->link_after, '</span>' . $svg, $item_output ); 
+
 	return $item_output;
+
 }
 add_filter( 'walker_nav_menu_start_el', 'hybridmag_nav_menu_social_icons', 10, 4 );
+
+/**
+ * Adds social icon field to social menu items.
+ *
+ * @since HybridMag 1.1.3
+ *
+ * @param int      $item_id           Menu item ID.
+ * @param WP_Post  $menu_item        Menu item object.
+ * @param int      $depth             Menu item depth.
+ * @param stdClass $args              Menu arguments.
+ * @param int      $current_object_id   Nav menu ID.
+ */
+function hybridmag_social_icon_menu_item_field( $item_id, $menu_item, $depth, $args, $current_object_id ) {
+	
+	$current_menu_id = isset( $_GET['menu'] ) ? absint( $_GET['menu'] ) : 0;
+
+	$locations = get_nav_menu_locations();
+
+	$social_menu_id = isset( $locations['social'] ) ? absint( $locations['social'] ) : 0;
+
+	if ( $current_menu_id !== $social_menu_id ) {
+		return;
+	}
+
+	$selected_icon = get_post_meta(
+		$item_id,
+		'_hybridmag_social_menu_icon',
+		true
+	);
+
+	$social_icons = HybridMag_SVG_Icons::$social_icons;
+	?>
+
+	<p class="field-hybridmag-social-icon description description-wide">
+
+		<label for="edit-hybridmag-menu-item-social-icon-<?php echo esc_attr( $item_id ); ?>">
+
+			<?php esc_html_e( 'Social Icon', 'hybridmag' ); ?><br>
+
+			<select
+				id="edit-hybridmag-menu-item-social-icon-<?php echo esc_attr( $item_id ); ?>"
+				name="hybridmag-menu-item-social-icon[<?php echo esc_attr( $item_id ); ?>]"
+				class="widefat"
+			>
+
+				<option value="">
+					<?php esc_html_e( 'Auto Detect', 'hybridmag' ); ?>
+				</option>
+
+				<?php foreach ( $social_icons as $icon => $svg ) : ?>
+
+					<option
+						value="<?php echo esc_attr( $icon ); ?>"
+						<?php selected( $selected_icon, $icon ); ?>
+					>
+						<?php echo esc_html( ucfirst( $icon ) ); ?>
+					</option>
+
+				<?php endforeach; ?>
+
+			</select>
+
+			<span class="description">
+				<?php esc_html_e(
+					'Select an icon or use automatic detection based on the URL.',
+					'hybridmag'
+				); ?>
+			</span>
+
+		</label>
+
+	</p>
+
+	<?php
+}
+add_action( 'wp_nav_menu_item_custom_fields', 'hybridmag_social_icon_menu_item_field', 10, 5 );
+
+/**
+ * Saves Social Icon menu item setting.
+ *
+ * @since HybridMag 1.1.3
+ * 
+ * @param int   $menu_id         Menu ID.
+ * @param int   $menu_item_db_id Menu item ID.
+ * @param array $args            Menu item arguments.
+ */
+function hybridmag_save_social_icon_menu_item( $menu_id, $menu_item_db_id, $args ) {
+
+	if ( ! isset( $_POST['hybridmag-menu-item-social-icon'][ $menu_item_db_id ] ) ) {
+		return;
+	}
+
+	$icon = sanitize_key(
+		wp_unslash(
+			$_POST['hybridmag-menu-item-social-icon'][ $menu_item_db_id ]
+		)
+	);
+
+	$icons = HybridMag_SVG_Icons::$social_icons;
+
+	if ( $icon && isset( $icons[ $icon ] ) ) {
+
+		update_post_meta(
+			$menu_item_db_id,
+			'_hybridmag_social_menu_icon',
+			$icon
+		);
+
+	} else {
+
+		delete_post_meta(
+			$menu_item_db_id,
+			'_hybridmag_social_menu_icon'
+		);
+	}
+}
+add_action( 'wp_update_nav_menu_item', 'hybridmag_save_social_icon_menu_item', 10, 3 );
 
 /**
  * Adds custom class to the array of posts classes.
