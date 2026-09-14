@@ -6,7 +6,7 @@
  */
 
 if ( ! defined( 'HYBRIDMAG_VERSION' ) ) {
-	define( 'HYBRIDMAG_VERSION', '1.1.3' );
+	define( 'HYBRIDMAG_VERSION', '1.1.4' );
 }
 
 /**
@@ -35,9 +35,6 @@ function hybridmag_setup() {
 		* provide it for us.
 		*/
 	add_theme_support( 'title-tag' );
-
-	// Add support for Block Styles.
-	add_theme_support( 'wp-block-styles' );
 
 	// Add support for responsive embedded content.
 	add_theme_support( 'responsive-embeds' );

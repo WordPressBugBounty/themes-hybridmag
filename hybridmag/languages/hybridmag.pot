@@ -3,9 +3,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: HybridMag 1.1.3\n"
+"Project-Id-Version: HybridMag 1.1.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/hybridmag\n"
-"POT-Creation-Date: 2026-08-19 23:41+0530\n"
+"POT-Creation-Date: 2026-09-13 17:14+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ThemezHut\n"
@@ -40,63 +40,63 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: functions.php:78 inc/customizer/customizer.php:705
+#: functions.php:75 inc/customizer/customizer.php:705
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:79
+#: functions.php:76
 msgid "Top Menu"
 msgstr ""
 
-#: functions.php:80 functions.php:157
+#: functions.php:77 functions.php:154
 msgid "Social Menu"
 msgstr ""
 
-#: functions.php:214
+#: functions.php:211
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:216
+#: functions.php:213
 msgid "Add widgets here."
 msgstr ""
 
-#: functions.php:223 inc/customizer/customizer.php:1075
+#: functions.php:220 inc/customizer/customizer.php:1075
 msgid "Slide-out Sidebar"
 msgstr ""
 
-#: functions.php:225
+#: functions.php:222
 msgid "Add widgets here to appear in an off-screen sidebar when it is enabled under the Customizer Header Settings."
 msgstr ""
 
-#: functions.php:232
+#: functions.php:229
 msgid "Header Sidebar"
 msgstr ""
 
-#: functions.php:234
+#: functions.php:231
 msgid "Add widgets here to appear on the Header"
 msgstr ""
 
-#: functions.php:241
+#: functions.php:238
 msgid "Below Header"
 msgstr ""
 
-#: functions.php:243
+#: functions.php:240
 msgid "Add widgets here to appear below the Header"
 msgstr ""
 
-#: functions.php:250
+#: functions.php:247
 msgid "Footer 1"
 msgstr ""
 
-#: functions.php:258
+#: functions.php:255
 msgid "Footer 2"
 msgstr ""
 
-#: functions.php:266
+#: functions.php:263
 msgid "Footer 3"
 msgstr ""
 
-#: functions.php:274
+#: functions.php:271
 msgid "Footer 4"
 msgstr ""
 
@@ -170,6 +170,7 @@ msgid "Ready for more?"
 msgstr ""
 
 #: inc/customizer/custom-controls/class-upsell-customize.php:77
+#: inc/dashboard/theme-info.php:88 inc/dashboard/theme-info.php:309
 msgid "Get HybridMag Pro"
 msgstr ""
 
@@ -832,6 +833,7 @@ msgid "Blog / Archive"
 msgstr ""
 
 #: inc/customizer/customizer.php:2538 inc/customizer/customizer.php:2560
+#: inc/dashboard/theme-info.php:279
 msgid "Blog Layout"
 msgstr ""
 
@@ -1208,103 +1210,225 @@ msgid "Error"
 msgstr ""
 
 #: inc/dashboard/theme-info.php:28
-msgid "Welcome to HybridMag! To get started with HybridMag please visit the theme Welcome page."
+msgid "Welcome to HybridMag! To get started with HybridMag please visit the theme admin page."
 msgstr ""
 
 #: inc/dashboard/theme-info.php:29
-msgid "Get Started with HybridMag"
+msgid "HybridMag Admin Page"
 msgstr ""
 
 #: inc/dashboard/theme-info.php:47 inc/dashboard/theme-info.php:49
 msgid "HybridMag Theme"
 msgstr ""
 
-#: inc/dashboard/theme-info.php:67
+#: inc/dashboard/theme-info.php:60
+msgid "HybridMag"
+msgstr ""
+
+#: inc/dashboard/theme-info.php:63
+msgid "Theme Version"
+msgstr ""
+
+#: inc/dashboard/theme-info.php:68
+msgid "PRO Plugin Version"
+msgstr ""
+
+#: inc/dashboard/theme-info.php:80
+msgid "Welcome"
+msgstr ""
+
+#: inc/dashboard/theme-info.php:83 inc/dashboard/theme-info.php:293
 msgid "Starter Templates"
 msgstr ""
 
-#: inc/dashboard/theme-info.php:130
+#: inc/dashboard/theme-info.php:157
 msgid "Install Post Blocks & Tools Plugin Now"
 msgstr ""
 
-#: inc/dashboard/theme-info.php:131 inc/dashboard/theme-info.php:159
+#: inc/dashboard/theme-info.php:158 inc/dashboard/theme-info.php:186
 msgid "Post Blocks & Tools"
 msgstr ""
 
-#: inc/dashboard/theme-info.php:132
+#: inc/dashboard/theme-info.php:159
 msgid "Install and activate"
 msgstr ""
 
-#: inc/dashboard/theme-info.php:149
+#: inc/dashboard/theme-info.php:176
 msgid "Activate"
 msgstr ""
 
-#: inc/dashboard/theme-info.php:151
+#: inc/dashboard/theme-info.php:178
 msgid "Activate Plugin"
 msgstr ""
 
-#: inc/dashboard/theme-info.php:158
+#: inc/dashboard/theme-info.php:185
 msgid "Activate Post Blocks & Tools Plugin Now"
 msgstr ""
 
-#: inc/dashboard/theme-info.php:169
+#: inc/dashboard/theme-info.php:196
 msgid "To import demos, simply install and activate our \"Post Blocks & Tools\" plugin. Click to install and activate."
 msgstr ""
 
-#: inc/dashboard/theme-info.php:208
-msgid "Theme Customizer"
+#: inc/dashboard/theme-info.php:237
+msgid "Get Started"
 msgstr ""
 
-#: inc/dashboard/theme-info.php:209
-msgid "All the HybridMag theme settings are located at the customizer. Start customizing your website with customizer."
+#: inc/dashboard/theme-info.php:238
+msgid "Go to Customizer"
 msgstr ""
 
-#: inc/dashboard/theme-info.php:210
-msgid "Go to customizer"
+#: inc/dashboard/theme-info.php:244
+msgid "Upload Logo"
 msgstr ""
 
-#: inc/dashboard/theme-info.php:216
-msgid "Theme Documentation"
+#: inc/dashboard/theme-info.php:245
+msgid "Site Branding"
 msgstr ""
 
-#: inc/dashboard/theme-info.php:217
-msgid "Need to learn all about HybridMag? Read the theme documentation carefully."
+#: inc/dashboard/theme-info.php:251
+msgid "Header Options"
 msgstr ""
 
-#: inc/dashboard/theme-info.php:218 inc/dashboard/theme-info.php:242
-msgid "Read the documentation."
+#: inc/dashboard/theme-info.php:252
+msgid "Header Layout, Menu Options, Social Menu, Top Bar"
 msgstr ""
 
-#: inc/dashboard/theme-info.php:224
-msgid "Theme Info"
+#: inc/dashboard/theme-info.php:258
+msgid "Set Colors"
 msgstr ""
 
-#: inc/dashboard/theme-info.php:225
-msgid "Know all the details about HybridMag theme."
+#: inc/dashboard/theme-info.php:259
+msgid "Customize site colors"
 msgstr ""
 
-#: inc/dashboard/theme-info.php:226
-msgid "Theme Details."
+#: inc/dashboard/theme-info.php:265
+msgid "Blog Options"
 msgstr ""
 
-#: inc/dashboard/theme-info.php:232
-msgid "Theme Demo"
+#: inc/dashboard/theme-info.php:266
+msgid "Post display & formatting"
 msgstr ""
 
-#: inc/dashboard/theme-info.php:233
-msgid "See the theme preview of free version."
+#: inc/dashboard/theme-info.php:272
+msgid "Fonts"
 msgstr ""
 
-#: inc/dashboard/theme-info.php:234
-msgid "Theme Preview"
+#: inc/dashboard/theme-info.php:273
+msgid "Typography & text styles"
 msgstr ""
 
-#: inc/dashboard/theme-info.php:240
-msgid "Demo Installation"
+#: inc/dashboard/theme-info.php:280
+msgid "Blog layout options"
 msgstr ""
 
-#: inc/dashboard/theme-info.php:241
-msgid "Learn about starter sites."
+#: inc/dashboard/theme-info.php:286
+msgid "Footer Options"
+msgstr ""
+
+#: inc/dashboard/theme-info.php:287
+msgid "Copyright info & footer widgets"
+msgstr ""
+
+#: inc/dashboard/theme-info.php:294
+msgid "Select and install pre-built demos"
+msgstr ""
+
+#: inc/dashboard/theme-info.php:303
+msgid "Take Your HybridMag Site Further"
+msgstr ""
+
+#: inc/dashboard/theme-info.php:304
+msgid "HybridMag Pro is a dedicated extension plugin that adds advanced design controls, flexible layouts, and enhanced features to your existing HybridMag website."
+msgstr ""
+
+#: inc/dashboard/theme-info.php:320
+msgid "Advanced Design Controls"
+msgstr ""
+
+#: inc/dashboard/theme-info.php:321 inc/dashboard/theme-info.php:329
+#: inc/dashboard/theme-info.php:337 inc/dashboard/theme-info.php:345
+#: inc/dashboard/theme-info.php:353 inc/dashboard/theme-info.php:361
+msgid "PRO"
+msgstr ""
+
+#: inc/dashboard/theme-info.php:323
+msgid "Fine-tune typography, colors, layouts, and more to create a site that feels uniquely yours."
+msgstr ""
+
+#: inc/dashboard/theme-info.php:328
+msgid "Advanced Post Blocks & Tools"
+msgstr ""
+
+#: inc/dashboard/theme-info.php:331
+msgid "Take your Post Blocks & Tools blocks further with AJAX-powered filtering and seamless previous/next navigation for a faster, more engaging content experience."
+msgstr ""
+
+#: inc/dashboard/theme-info.php:336
+msgid "Auto-Loading Single Posts"
+msgstr ""
+
+#: inc/dashboard/theme-info.php:339
+msgid "Keep readers exploring by automatically loading the next article when they reach the end of a post."
+msgstr ""
+
+#: inc/dashboard/theme-info.php:344
+msgid "Video Block"
+msgstr ""
+
+#: inc/dashboard/theme-info.php:347
+msgid "Showcase your YouTube playlists with an engaging grid layout designed for your content."
+msgstr ""
+
+#: inc/dashboard/theme-info.php:352
+msgid "Infinite Scroll"
+msgstr ""
+
+#: inc/dashboard/theme-info.php:355
+msgid "Keep readers discovering more content by automatically loading posts as they scroll."
+msgstr ""
+
+#: inc/dashboard/theme-info.php:360
+msgid "WooCommerce Support"
+msgstr ""
+
+#: inc/dashboard/theme-info.php:363
+msgid "Turn your blog or magazine into an online store with enhanced WooCommerce layouts and controls."
+msgstr ""
+
+#: inc/dashboard/theme-info.php:371
+msgid "Quick Links"
+msgstr ""
+
+#: inc/dashboard/theme-info.php:374
+msgid "Documentation / Theme Setup Guide"
+msgstr ""
+
+#: inc/dashboard/theme-info.php:377
+msgid "Contact Support"
+msgstr ""
+
+#: inc/dashboard/theme-info.php:380
+msgid "Changelog"
+msgstr ""
+
+#: inc/dashboard/theme-info.php:383
+msgid "Feature Requests"
+msgstr ""
+
+#: inc/dashboard/theme-info.php:386
+msgid "Free vs Pro"
+msgstr ""
+
+#: inc/dashboard/theme-info.php:391
+msgid "Leave us a review"
+msgstr ""
+
+#: inc/dashboard/theme-info.php:392
+msgid "Are you enjoying HybridMag? We would love to hear your feedback."
+msgstr ""
+
+#: inc/dashboard/theme-info.php:395
+msgid "Submit a review"
 msgstr ""
 
 #: inc/structure/footer.php:43

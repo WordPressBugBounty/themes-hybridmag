@@ -45,21 +45,27 @@ ul.th-responsive-switches li {
     margin: 15px 0;
 }
 
+#customize-theme-controls #accordion-section-hybridmag_upsell {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 2px solid #00A388 !important;
+    border-bottom: 2px solid #00A388 !important;
+    background-color: #ffffff;
+}
+
 #accordion-section-hybridmag_upsell a.button.button-secondary {
     background: #00A388;
     color: #fff;
     border: none;
     box-shadow: none;
+    margin: 0 5px;
 }
 
-.control-section-hm-upsell .accordion-section-title .button {
-    margin-top: -3px;
-}
 .control-section-hm-upsell.control-section .accordion-section-title {
     padding-top: 15px !important;
     padding-bottom: 15px !important;
-    border-top: 2px solid #00A388;
-    border-bottom: 2px solid #00A388 !important;
+    display: inline-block !important;
 }
 
 .customize-control {

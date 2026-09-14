@@ -60,14 +60,12 @@ class HybridMag_Upsell_Customize_Section_Pro extends WP_Customize_Section {
 	protected function render_template() { ?>
 
 		<li id="accordion-section-{{ data.id }}" class="accordion-section control-section control-section-{{ data.type }} cannot-expand">
-
 			<h3 class="accordion-section-title">
 				{{ data.title }}
-
-				<# if ( data.pro_text && data.pro_url ) { #>
-					<a href="{{ data.pro_url }}" class="button button-secondary alignright" target="_blank">{{ data.pro_text }}</a>
-				<# } #>
 			</h3>
+			<# if ( data.pro_text && data.pro_url ) { #>
+					<a href="{{ data.pro_url }}" class="button button-secondary alignright" target="_blank">{{ data.pro_text }}</a>
+			<# } #>
 		</li>
 	<?php }
 }
