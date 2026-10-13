@@ -45,7 +45,17 @@ class HybridMag_Upsell_Customize_Section_Pro extends WP_Customize_Section {
 		$json = parent::json();
 
 		$json['pro_text'] = $this->pro_text;
-		$json['pro_url']  = esc_url( $this->pro_url );
+		$json['pro_url']  = esc_url_raw(
+			add_query_arg(
+				array(
+					'utm_source'   => 'hybridmag-theme',
+					'utm_medium'   => 'customizer',
+					'utm_campaign' => 'getpronow',
+					'utm_content'  => 'pro-button',
+				),
+				$this->pro_url
+			)
+		);
 
 		return $json;
 	}

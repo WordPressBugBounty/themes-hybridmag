@@ -10,7 +10,7 @@ h3.th-reqbox-heading {
     margin-top: 0;
 }
 
-.appearance_page_hybridmag #wpcontent {
+.toplevel_page_hybridmag-dashboard #wpcontent {
     padding-left: 0;
 }
 
@@ -55,14 +55,18 @@ h3.th-reqbox-heading {
     border-radius: 10px;
 }
 
-.appearance_page_hybridmag {
+.th-demo-plugin-notice p {
+    margin: 0 0 15px;
+}
+
+.toplevel_page_hybridmag-dashboard {
     background: #f5f5f5;
 }
 
-.appearance_page_hybridmag .th-nav-tab-active, 
-.appearance_page_hybridmag .th-nav-tab-active:focus, 
-.appearance_page_hybridmag .th-nav-tab-active:focus:active, 
-.appearance_page_hybridmag .th-nav-tab-active:hover {
+.toplevel_page_hybridmag-dashboard .th-nav-tab-active, 
+.toplevel_page_hybridmag-dashboard .th-nav-tab-active:focus, 
+.toplevel_page_hybridmag-dashboard .th-nav-tab-active:focus:active, 
+.toplevel_page_hybridmag-dashboard .th-nav-tab-active:hover {
     border-bottom: 2px solid #3858e9;
     background-color: transparent;
 }
@@ -81,9 +85,17 @@ h3.th-reqbox-heading {
 }
 
 .th-admin-theme-name {
-    font-size: 26px;
+    font-size: 23px;
     font-weight: 700;
-    color: #000000;
+    color: #333;
+    display: inline-flex;
+    align-items: center;
+}
+
+.th-admin-theme-logo img {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
 }
 
 .th-admin-theme-info {
@@ -145,14 +157,24 @@ a.th-nav-tab.menu-get-pro-link:focus {
 
 
 @media (min-width: 800px) {
+
     .th-theme-details-page {
         display: flex;
-        gap: 35px;
+        gap: 50px;
+    }
+
+    .th-admin-theme-sidebar .th-theme-details-page {
+        flex-wrap: wrap;
+    }
+
+    .th-hybridmag-pro-active .th-admin-theme-content {
+        width: 70%;
     }
 
     .th-admin-theme-content {
-        width: 70%;
+        width: 100%;
     }
+
     .th-admin-theme-sidebar {
         width: 30%;
     }
@@ -180,9 +202,14 @@ a.th-nav-tab.menu-get-pro-link:focus {
 
 .th-pro-features-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 35px;
     margin-top: 25px;
+} 
+
+.th-hybridmag-pro-active .th-pro-features-container,
+.th-admin-setting-page .th-pro-features-container {
+    grid-template-columns: 1fr 1fr; 
 }
 
 .th-pro-feature-title {
@@ -205,7 +232,17 @@ a.th-nav-tab.menu-get-pro-link:focus {
 
 .th-admin-pro-heading {
     margin: 0;
-    font-size: 18px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.th-admin-pro-heading svg {
+    fill: #25AD97;
+    width: 35px;
+    height: 35px;
+    margin-right: 7px;
 }
 
 .th-admin-qsc-name {
@@ -218,7 +255,7 @@ a.th-nav-tab.menu-get-pro-link:focus {
     margin-top: 5px;
 }
 
-.th-admin-theme-setting-header {
+.th-admin-theme-wl-setting-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -243,6 +280,7 @@ a.th-nav-tab.menu-get-pro-link:focus {
 
 .th-admin-theme-settings {
     padding: 25px 30px 30px 30px;
+    margin: 0 0 50px;
 }
 
 .hybridmag-license-box p.submit {
@@ -272,24 +310,24 @@ a.th-nav-tab.menu-get-pro-link:focus {
 
 .th-admin-quick-access-links ul {
     margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
 }
 
 .th-admin-quick-access-links ul li {
     list-style: none;
     margin: 0;
-    padding: 4px 0;
-    border-bottom: 1px solid #eee;
-}
-
-.th-admin-quick-access-links ul li:last-child {
-    border-bottom: none;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 10px;
 }
 
 .th-admin-quick-access-links ul li a {
     padding: 5px 0;
     display: block;
     color: #000000;
-    font-size: 14px;
+    font-size: 20px;
     text-decoration: none;
 }
 
@@ -327,9 +365,9 @@ a.th-nav-tab.menu-get-pro-link:focus {
 
 .wp-core-ui .button.hm-admin-go-pro:hover,
 .wp-core-ui .button.hm-admin-go-customizer:hover {
-    outline-color: #25AD97;
-    background-color: #25AD97;
-    border-color: #25AD97;
+    outline-color: #049d84;
+    background-color: #049d84;
+    border-color: #049d84;
 }
 
 .wp-core-ui .button.hm-admin-go-customizer:focus {
@@ -355,6 +393,10 @@ a.th-nav-tab.menu-get-pro-link:focus {
     margin-left: auto;
 }
 
+.wp-core-ui .th-admin-setting-save-btn {
+    margin: 20px 0 0;
+}
+
 .th-admin-pro-desc {
     width: 80%;
 }
@@ -364,12 +406,13 @@ p.th-pro-feature-desc {
 }
 
 .wp-core-ui .button.hm-admin-go-pro:hover {
-    background-color: #111;
-    border-color: #111;
+    background-color: #049d84;
+    border-color: #049d84;
 }
 
 .wp-core-ui .button.hm-admin-go-pro:focus {
-    outline-color: #111;
+    outline-color: #049d84;
+    box-shadow: none;
 }
 
 .th-pro-feature-title-wrap {
@@ -379,8 +422,8 @@ p.th-pro-feature-desc {
 }
 
 .th-pro-feature-title-wrap .hm-svg-icon {
-    width: 18px;
-    height: 18px;
+    width: 23px;
+    height: 23px;
 }
 
 .th-admin-pro-label {
@@ -400,4 +443,73 @@ p.th-pro-feature-desc {
     display: flex;
     align-items: center;
     gap: 40px;
+}
+
+.th-theme-info-page > .notice, 
+.th-theme-info-page > .error,
+.toplevel_page_hybridmag-dashboard #wpbody-content>.notice, 
+.toplevel_page_hybridmag-dashboard #wpbody-content>.error {
+    display: none;
+}
+
+.th-admin-theme-setting-section-title {
+    margin: 0 0 1em;
+}
+
+.th-admin-setting-page .th-admin-theme-content {
+    margin: 0 auto;
+}
+
+.th-admin-setting-label {
+    font-size: 14px;
+    display: block;
+    margin: 0 0 4px;
+    color: #444444;
+}
+
+.th-admin-setting-input {
+    width: 100%;
+    margin: 0;
+}
+
+.th-admin-setting-page .th-admin-theme-setting-title {
+    margin: 20px 0;
+}
+
+.th-admin-setting {
+    margin: 0 0 25px;
+}
+
+.th-theme-infoboxes {
+    --hybridmag-theme-info-gap: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--hybridmag-theme-info-gap);
+    margin: 0 0 50px;
+}
+
+.th-theme-page-infobox {
+    background: #ffffff;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.06);
+    border-radius: 10px;
+}
+
+@media (min-width: 600px) {
+    .th-theme-page-infobox {
+        width: calc( 50% - var(--hybridmag-theme-info-gap)/2);
+    }
+}
+
+.th-theme-infobox-content {
+    padding: 30px;
+}
+
+.th-theme-infobox-content h3,
+.th-theme-infobox-content p {
+    margin: 0 0 20px;
+}
+
+.th-admin-setting-page {
+    max-width: 1060px;
+    margin: 0 auto;
 }

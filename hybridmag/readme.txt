@@ -4,7 +4,7 @@ Contributors: pubudu-malalasekara
 Requires at least: 5.0
 Tested up to: 7.1
 Requires PHP: 7.0
-Stable tag: 1.1.4
+Stable tag: 1.1.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,6 +21,9 @@ HybridMag is a modern and stylish WordPress theme for blogs, newspapers, and mag
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+
+= 1.1.5 =
+* New: Improved HybridMag admin page.
 
 = 1.1.4 =
 * New: Improved HybridMag admin page.

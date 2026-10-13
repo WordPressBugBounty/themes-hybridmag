@@ -144,8 +144,8 @@ add_action( 'bnmbt_importer_after_import', 'hybridmag_handle_after_import' );
  */
 function hybridmag_demo_importer_display_location() {
     return array(
-        'parent_slug'   => 'themes.php',
-        'menu_slug'     => 'hybridmag',
+        'parent_slug'   => 'admin.php',
+        'menu_slug'     => 'hybridmag-dashboard',
         'tab'           => 'starter-templates'
     );
 }
